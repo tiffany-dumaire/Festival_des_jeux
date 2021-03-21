@@ -18,7 +18,7 @@ struct FestivalInformationsMenu: View {
                         .resizable()
                         .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
-                    Spacer()
+                    
                     Text("Festival :\nnom du festival")
                         .bold()
                         .font(.largeTitle)
@@ -61,7 +61,7 @@ struct FestivalInformationsMenu: View {
                             .foregroundColor(.white)
                     }
                     Spacer()
-                }.background(Color(red:0/255,green:0/255,blue:0/255,opacity:0.1))
+                }.background(Color(red:0/255,green:0/255,blue:0/255,opacity:0.3))
             }.background(
                 Image("backgroundMenu")
                     .resizable()

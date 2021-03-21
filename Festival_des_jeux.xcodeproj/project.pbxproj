@@ -52,6 +52,9 @@
 		57B2F543260764F400CA9233 /* Festival_des_jeux */ = {
 			isa = PBXGroup;
 			children = (
+				57B2F557260765B600CA9233 /* ViewModel */,
+				57B2F5562607659D00CA9233 /* Model */,
+				57B2F5552607658800CA9233 /* View */,
 				57B2F544260764F400CA9233 /* Festival_des_jeuxApp.swift */,
 				57B2F546260764F400CA9233 /* ContentView.swift */,
 				57B2F548260764F500CA9233 /* Assets.xcassets */,
@@ -67,6 +70,27 @@
 				57B2F54B260764F500CA9233 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57B2F5552607658800CA9233 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57B2F5562607659D00CA9233 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57B2F557260765B600CA9233 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -22,7 +22,22 @@ class User: Identifiable,Codable {
         self.userToken = ""
     }
     
-    static func connexionUser(id : String){
-
+    /**
+        Connexion de l'utilisateur à partir de ses identifiants
+        mail : son adresse mail
+        password : son mot de passe
+     */
+    static func connexionUser(mail : String, password : String){
+        
+    }
+    
+    /**
+        Crée un nouvel utilisateur dans la base de données
+        mail : adresse email de l'utilisateur
+        password : mot de passe de l'utilisateur
+        admin :  true = compte grand manitou, false = compte organisateur
+     */
+    static func signUpUser(mail: String,password : String, admin : Bool){
+        
     }
 }

@@ -35,7 +35,7 @@ struct ContentView: View {
                     VStack{
                         Text("Je suis un visiteur :")
                         NavigationLink(
-                            destination: LoginView(),
+                            destination: FestivalInformationsMenu(),
                             label: {
                                 Text("Voir les information\ndu prochain festival")
                                     .multilineTextAlignment(.center)

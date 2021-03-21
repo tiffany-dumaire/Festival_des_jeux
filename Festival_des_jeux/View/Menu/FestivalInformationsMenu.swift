@@ -12,11 +12,17 @@ struct FestivalInformationsMenu: View {
         NavigationView{
             ZStack{
                 VStack{
+                    HStack{
+                        Spacer()
+                        Image("logo")
+                        .resizable()
+                        .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
+                    }
                     Spacer()
-                    Text("Menu des informations\n             du festival :")
+                    Text("Festival :\nnom du festival")
                         .bold()
                         .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .foregroundColor(Color.white)
                     Spacer()
                     HStack{
                         NavigationLink(
@@ -55,14 +61,14 @@ struct FestivalInformationsMenu: View {
                             .foregroundColor(.white)
                     }
                     Spacer()
-                }
+                }.background(Color(red:0/255,green:0/255,blue:0/255,opacity:0.1))
             }.background(
                 Image("backgroundMenu")
                     .resizable()
                     .scaledToFill()
                     .clipped()
                 )
-                .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

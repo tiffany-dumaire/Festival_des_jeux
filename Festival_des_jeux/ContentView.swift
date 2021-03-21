@@ -9,50 +9,53 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack{
-            VStack{
-                HStack{
-                    Image("logo")
-                    .resizable()
-                        .frame(minWidth: 110, idealWidth: 110, maxWidth: 110, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .topLeading)
+        NavigationView{
+            ZStack{
+                VStack{
+                    HStack{
+                        Image("logo")
+                        .resizable()
+                            .frame(minWidth: 110, idealWidth: 110, maxWidth: 110, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .topLeading)
+                        Spacer()
+                    }
                     Spacer()
-                }
-                Spacer()
-                VStack{
-                    Text("Je suis un organisateur :")
-                    NavigationLink(
-                        destination: LoginView(),
-                        label: {
-                            Text("Se connecter")
-                        })
-                    .padding()
-                    .background(Color.green)
-                    .cornerRadius(30)
-                    .foregroundColor(.white)
-                }
-                Spacer()
-                VStack{
-                    Text("Je suis un visiteur :")
-                    NavigationLink(
-                        destination: LoginView(),
-                        label: {
-                            Text("Voir les informations\ndu prochain festival")
-                                .multilineTextAlignment(.center)
-                        })
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(30)
-                    .foregroundColor(.white)
-                }
-                Spacer()
+                    VStack{
+                        Text("Je suis un organisateur :")
+                        NavigationLink(
+                            destination: LoginView(),
+                            label: {
+                                Text("Se connecter")
+                            })
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(30)
+                        .foregroundColor(.white)
+                    }
+                    Spacer()
+                    VStack{
+                        Text("Je suis un visiteur :")
+                        NavigationLink(
+                            destination: LoginView(),
+                            label: {
+                                Text("Voir les information\ndu prochain festival")
+                                    .multilineTextAlignment(.center)
+                            })
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(30)
+                        .foregroundColor(.white)
+                    }
+                    Spacer()
+                        
+                }.background(
+                Image("backgroundStartView")
+                    .resizable()
+                    .scaledToFill()
+                    .clipped()
+                )
+                .edgesIgnoringSafeArea(.all)
             }
-        }.background(
-            Image("backgroundStartView")
-                .resizable()
-                .scaledToFill()
-                .clipped()
-        )
-        .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 

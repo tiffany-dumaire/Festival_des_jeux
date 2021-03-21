@@ -20,32 +20,57 @@ struct LoginView: View {
     }
     
     var body : some View {
-        VStack{
-            Text("Connexion")
-            error ?
-                Text("Veuillez saisir un mail ou un mot de passe correct")
+        ZStack{
+            VStack{
+                HStack{
+                    Image("logo")
+                    .resizable()
+                    .frame(minWidth: 110, idealWidth: 110, maxWidth: 110, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
+                }
+                Spacer()
+                
+                Text("Connexion")
+                    .font(.largeTitle)
+                    .bold()
+                
+                error ?
+                    Text("Veuillez saisir un mail ou un mot de passe correct")
+                    .padding()
+                    .background(Color.red)
+                    .cornerRadius(10)
+                    : nil
+                
+                HStack {
+                    Text("Email :")
+                        .bold()
+                    TextField("Email", text : $mail)
+                        .cornerRadius(10)
+                }.padding()
+                
+                HStack{
+                    Text("Mot de passe :")
+                        .bold()
+                    SecureField("mot de passe...",text: $password)
+                        .cornerRadius(10)
+                }.padding()
+                
+                Button(action:self.login){
+                    Text("Se connecter")
+                }
                 .padding()
-                .background(Color.red)
-                .cornerRadius(10)
-                : nil
-            HStack {
-                Text("Email :")
-                TextField("Email", text : $mail)
-                    .cornerRadius(10)
-            }.padding()
-            HStack{
-                Text("Mot de passe :")
-                SecureField("mot de passe...", text: $password)
-                    .cornerRadius(10)
-            }.padding()
-            
-            Button(action:self.login){
-                Text("Se connecter")
-            }
-            .padding()
-            .background(Color.green)
-            .foregroundColor(.white)
-        }
+                .background(Color.green)
+                .foregroundColor(.white)
+                Spacer()
+            }.background(Color.white
+                            .opacity(0.4))
+        }.background(
+            Image("background")
+                .resizable()
+                .scaledToFill()
+                .clipped()
+        )
+        .edgesIgnoringSafeArea(.all)
+        
     }
     
 }

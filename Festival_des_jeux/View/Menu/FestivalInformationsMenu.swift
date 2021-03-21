@@ -18,7 +18,6 @@ struct FestivalInformationsMenu: View {
                         .resizable()
                         .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
-                    
                     Text("Festival :\nnom du festival")
                         .bold()
                         .font(.largeTitle)

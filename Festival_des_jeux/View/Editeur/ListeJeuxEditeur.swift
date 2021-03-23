@@ -9,7 +9,38 @@ import SwiftUI
 
 struct ListeJeuxEditeur: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ZStack{
+                VStack{
+                    HStack{
+                        Spacer()
+                        Image("logo")
+                        .resizable()
+                        .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
+                    }
+                    Spacer()
+                    HStack{
+                        NavigationLink(
+                            destination: DetailsJeuEditeur(),
+                            label: {
+                                Text("Details des jeux")
+                                    .bold()
+                            }).padding()
+                            .background(Color.blue)
+                            .cornerRadius(30)
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
+                }
+            }.background(
+                Image("backgroundList")
+                    .resizable()
+                    .scaledToFill()
+                    .clipped()
+                )
+            .edgesIgnoringSafeArea(.all)
+        }
+        
     }
 }
 

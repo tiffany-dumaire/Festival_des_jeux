@@ -35,7 +35,7 @@ class User: Identifiable,Codable {
         password : son mot de passe
      */
     static func connexionUser(mail : String, password : String){
-        
+         
     }
     
     /**

@@ -14,6 +14,13 @@ class User: Identifiable,Codable {
     var admin: Bool
     var userToken: String
     
+    /**
+        Constructeur de la class user
+        id : identifiant
+        mail : adresse mail de l'utilisateur
+        password : mot de passe
+        admin : True si c'est un grand manitou, False si c'est un organisateur
+     */
     init(id: Int, mail:String, password:String, admin: Bool){
         self._id = id
         self.mail = mail
@@ -28,7 +35,7 @@ class User: Identifiable,Codable {
         password : son mot de passe
      */
     static func connexionUser(mail : String, password : String){
-        
+         
     }
     
     /**

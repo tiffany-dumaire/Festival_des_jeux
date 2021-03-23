@@ -22,13 +22,12 @@ struct LoginView: View {
     var body : some View {
         ZStack{
             VStack{
+                Spacer()
                 HStack{
                     Image("logo")
                     .resizable()
                     .frame(minWidth: 110, idealWidth: 110, maxWidth: 110, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                 }
-                Spacer()
-                
                 Text("Connexion")
                     .font(.largeTitle)
                     .bold()
@@ -36,7 +35,7 @@ struct LoginView: View {
                 error ?
                     Text("Veuillez saisir un mail ou un mot de passe correct")
                     .padding()
-                    .background(Color.red)
+                    .background(Color(red: 255/255, green: 0/255, blue: 0/255,opacity: 0.6))
                     .cornerRadius(10)
                     : nil
                 

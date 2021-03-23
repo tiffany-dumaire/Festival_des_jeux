@@ -12,13 +12,13 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 VStack{
+                    Spacer()
                     HStack{
                         Image("logo")
                         .resizable()
                             .frame(minWidth: 110, idealWidth: 110, maxWidth: 110, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .topLeading)
-                        Spacer()
+                    
                     }
-                    Spacer()
                     VStack{
                         Text("Je suis un organisateur :")
                         NavigationLink(
@@ -37,7 +37,7 @@ struct ContentView: View {
                         NavigationLink(
                             destination: FestivalInformationsMenu(),
                             label: {
-                                Text("Voir les information\ndu prochain festival")
+                                Text("Voir les informations\ndu prochain festival")
                                     .multilineTextAlignment(.center)
                             })
                         .padding()

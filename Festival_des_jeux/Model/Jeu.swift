@@ -18,6 +18,18 @@ class Jeu: Identifiable,Codable {
     var typeJeu: String
     var editeur: String
     
+    /**
+        Constructeur de la class Jeu
+        id : identifiant du jeu
+        nomJeu : le nom du jeu
+        nbJoueurMin : le nombre de personne minimum qu'il faut pour jouer à ce jeu
+        nbJoueurMax : le nombre maximum de personne qu'il faut pour jouer à ce jeu
+        ageMin : age minimum requis pour jouer au jeu
+        duree : Temps qu'il faut en moyenne pour finir le jeu
+        lienNotice : le lien vers les règles du jeu
+        typeJeu : type du jeu donné (jeux pour enfants, etc..)
+        editeur : nom de l'éditeur du jeu
+     */
     init(id: Int, nomJeu: String, nbJoueurMin: Int, nbJoueurMax: Int, ageMin : Int, duree: Int, lienNotice: URL, typeJeu: String, editeur: String){
         self._id = id
         self.nomJeu = nomJeu

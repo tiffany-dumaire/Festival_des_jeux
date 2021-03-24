@@ -62,7 +62,7 @@ struct FestivalInformationsMenu: View {
                     Spacer()
                 }.background(Color(red:0/255,green:0/255,blue:0/255,opacity:0.3))
             }.background(
-                Image("backgroundMenu")
+                Image("background")
                     .resizable()
                     .scaledToFill()
                     .clipped()

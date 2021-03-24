@@ -12,48 +12,62 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 VStack{
-                    Spacer()
                     HStack{
+                        Spacer()
                         Image("logo")
                         .resizable()
-                            .frame(minWidth: 110, idealWidth: 110, maxWidth: 110, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .topLeading)
-                    
+                        .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
-                    VStack{
-                        Text("Je suis un organisateur :")
+                    Text("Festival :\nnom du festival")
+                        .bold()
+                        .font(.largeTitle)
+                        .foregroundColor(Color.black)
+                    Spacer()
+                    HStack{
                         NavigationLink(
-                            destination: LoginView(),
+                            destination: ListeJeuxFestival(),
                             label: {
-                                Text("Se connecter")
-                            })
-                        .padding()
-                        .background(Color.green)
-                        .cornerRadius(30)
-                        .foregroundColor(.white)
+                                Text("Liste des jeux du Festival")
+                                    .bold()
+                            }).padding()
+                            .background(Color.blue)
+                            .cornerRadius(30)
+                            .foregroundColor(.white)
                     }
                     Spacer()
-                    VStack{
-                        Text("Je suis un visiteur :")
+                    HStack{
                         NavigationLink(
-                            destination: FestivalInformationsMenu(),
+                            destination: ListeJeuxZone(),
                             label: {
-                                Text("Voir les informations\ndu prochain festival")
-                                    .multilineTextAlignment(.center)
-                            })
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(30)
-                        .foregroundColor(.white)
-                    }
-                    Spacer()
+                                Text(" Liste des jeux par Zone ")
+                                    .bold()
+                            }).padding()
+                            .background(Color.blue)
+                            .cornerRadius(30)
+                            .foregroundColor(.white)
                         
+                    }
+                    Spacer()
+                    HStack{
+                        NavigationLink(
+                            destination: ListeJeuxEditeur(),
+                            label: {
+                                Text("Liste des jeux par Editeur")
+                                    .bold()
+                            }).padding()
+                            .background(Color.blue)
+                            .cornerRadius(30)
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
                 }.background(
-                Image("backgroundStartView")
-                    .resizable()
-                    .scaledToFill()
-                    .clipped()
-                )
+                    Image("backgroundStartView")
+                        .resizable()
+                        .scaledToFill()
+                        .clipped()
+                    )
                 .edgesIgnoringSafeArea(.all)
+                
             }
         }
     }

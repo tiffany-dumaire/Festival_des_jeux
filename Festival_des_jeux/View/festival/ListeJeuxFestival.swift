@@ -11,6 +11,10 @@ struct ListeJeuxFestival: View {
     var body: some View {
         NavigationView{
             ZStack{
+                CarouselView(itemHeight: 400, views: [
+                            AnyView(Text("Festival 1")),
+                            AnyView(Text("Festival 2")),
+                        ])
                 VStack{
                     HStack{
                         Spacer()

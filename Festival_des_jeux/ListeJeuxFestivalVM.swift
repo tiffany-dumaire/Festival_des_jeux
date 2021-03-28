@@ -11,4 +11,11 @@ import Combine
 
 class ListeJeuxFestivalVM : ObservableObject {
     
+    @Published private var festival: Festival
+    @Published private var jeux:[Jeu]
+    
+    init(_ festival: Festival,_ jeux:[Jeu]){
+        self.festival = festival
+        self.jeux = jeux
+    }
 }

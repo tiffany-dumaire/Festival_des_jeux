@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct ListeJeuxFestival: View {
+    //var festival : Festival
+    //var jeux: [Jeu]
+    
+    var liste_jeux:[AnyView] = [AnyView(
+                                NavigationView{
+                                    VStack{
+                                        Text("Jeu 1")
+                                        NavigationLink(
+                                            destination: DetailsJeuFestival(),
+                                            label: {
+                                                Text("Détails du jeu")
+                                                    .bold()
+                                            }).padding()
+                                            .background(Color.blue)
+                                            .cornerRadius(30)
+                                            .foregroundColor(.white)
+                            }
+                        }),
+                               AnyView(Text("Festival 2")),
+                               AnyView(Text("Festival 3")),]
     var body: some View {
         NavigationView{
             ZStack{
-                CarouselView(itemHeight: 400, views: [
-                            AnyView(Text("Festival 1")),
-                            AnyView(Text("Festival 2")),
-                        ])
+                CarouselView(itemHeight: 400, views: liste_jeux)
                 VStack{
                     HStack{
                         Spacer()

@@ -39,7 +39,6 @@ struct CarouselView: View{
                                 .cornerRadius(10)
                                 .shadow(radius: 3)
                                 
-                                
                                 .opacity(self.getOpacity(i))
                                 .animation(.interpolatingSpring(stiffness: 300.0, damping: 30.0, initialVelocity: 10.0))
                                 .offset(x: self.getOffset(i))

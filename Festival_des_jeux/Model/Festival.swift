@@ -21,6 +21,21 @@ class Festival : ObservableObject {
     var prixE2 : Float
     var prixE3 : Float
     
+    init(){
+        self._id=0
+        self.nomFestival = "Test"
+        self.annee = 2021
+        self.nbTableE1 = 10
+        self.nbTableE2 = 10
+        self.nbTableE3 = 10
+        self.m2E1 = 100
+        self.m2E2 = 100
+        self.m2E3 = 100
+        self.prixE1 = 50
+        self.prixE2 = 30
+        self.prixE3 = 20
+    }
+    
     /**
         Constructeur de la class Festival
         id : identifiant du festival

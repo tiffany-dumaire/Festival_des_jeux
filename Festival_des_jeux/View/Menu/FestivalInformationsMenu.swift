@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FestivalInformationsMenu: View {
+struct FestivalInformationsMenu: View {    
     var body: some View {
         NavigationView{
             ZStack{

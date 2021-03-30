@@ -23,4 +23,22 @@ class ListeJeuxFestivalVM : ObservableObject {
         self.festival = festival
         self.jeux = jeux
     }
+    
+    func listeJeux() -> [AnyView]{
+        var res:[AnyView] = []
+        if self.jeux.count>0{
+        for j in self.jeux{
+            let cur = AnyView(
+        NavigationView{
+        Text(j.nomJeu)
+            Spacer()
+        }
+        )
+        res.append(cur)
+        }
+        }else{
+            res.append(AnyView(Text("Pas de jeux trouvés")))
+        }
+        return res
+    }
 }

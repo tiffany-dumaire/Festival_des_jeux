@@ -13,27 +13,10 @@ struct ListeJeuxFestival: View {
     //var festival : Festival
     //var jeux: [Jeu]
     
-    var liste_jeux:[AnyView] = [AnyView(
-                                NavigationView{
-                                    VStack{
-                                        Text("Jeu 1")
-                                        NavigationLink(
-                                            destination: DetailsJeuFestival(),
-                                            label: {
-                                                Text("Détails du jeu")
-                                                    .bold()
-                                            }).padding()
-                                            .background(Color.blue)
-                                            .cornerRadius(30)
-                                            .foregroundColor(.white)
-                            }
-                        }),
-                               AnyView(Text("Festival 2")),
-                               AnyView(Text("Festival 3")),]
     var body: some View {
         NavigationView{
             ZStack{
-                CarouselView(itemHeight: 400, views: liste_jeux)
+                CarouselView(itemHeight: 500, views: listeJeuxFestival.listeJeux())
                 VStack{
                     HStack{
                         Spacer()

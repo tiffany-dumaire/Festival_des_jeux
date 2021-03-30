@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    var f1 = Festival(1, nomFestival: "Festival1", annee: 2021, nbTableE1: 10.0, nbTableE2: 10.0, nbTableE3: 10.0, m2E1: 100, m2E2: 100, m2E3: 100, prixE1: 50, prixE2: 30, prixE3: 20)
+
+    var jeux = [Jeu(id: 1, nomJeu: "Jeu1", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 2, nomJeu: "Jeu2", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 3, nomJeu: "Jeu3", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur")]
     var body: some View {
         NavigationView{
             ZStack{
@@ -25,7 +28,7 @@ struct ContentView: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestival(),
+                            destination: ListeJeuxFestival(listeJeuxFestival: ListeJeuxFestivalVM(f1,jeux)),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()

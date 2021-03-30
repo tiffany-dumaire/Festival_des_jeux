@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FestivalInformationsMenu: View {
+struct FestivalInformationsMenu: View {    
     var body: some View {
         NavigationView{
             ZStack{
@@ -25,7 +25,7 @@ struct FestivalInformationsMenu: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestival(),
+                            destination: ListeJeuxFestival(listeJeuxFestival: ListeJeuxFestivalVM()),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()

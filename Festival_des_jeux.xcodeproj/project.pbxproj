@@ -31,6 +31,7 @@
 		57B2F55E26076FDF00CA9233 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B2F55D26076FDF00CA9233 /* LoginView.swift */; };
 		57B2F5642607746200CA9233 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B2F5632607746200CA9233 /* SearchBar.swift */; };
 		57D865EF260B7CA9002C422C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D865EE260B7CA9002C422C /* MainView.swift */; };
+		7C8E21CD260C91C8004DCDE6 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		57B2F55D26076FDF00CA9233 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		57B2F5632607746200CA9233 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		57D865EE260B7CA9002C422C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				57B2F5552607658800CA9233 /* View */,
 				57B2F544260764F400CA9233 /* Festival_des_jeuxApp.swift */,
 				57B2F546260764F400CA9233 /* ContentView.swift */,
+				7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */,
 				57B2F548260764F500CA9233 /* Assets.xcassets */,
 				57B2F54D260764F500CA9233 /* Info.plist */,
 				57B2F54A260764F500CA9233 /* Preview Content */,
@@ -340,6 +343,7 @@
 				5774D8E62607E79100954FE2 /* DetailsJeuZone.swift in Sources */,
 				571D844B2609EC3000EBA2A1 /* ListeJeuxFestivalVM.swift in Sources */,
 				5774D8D22607DA7400954FE2 /* ListeJeuxZone.swift in Sources */,
+				7C8E21CD260C91C8004DCDE6 /* CarouselView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

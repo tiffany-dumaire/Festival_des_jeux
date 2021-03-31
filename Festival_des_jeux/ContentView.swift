@@ -7,10 +7,37 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var f1 = Festival(1, nomFestival: "Festival1", annee: 2021, nbTableE1: 10.0, nbTableE2: 10.0, nbTableE3: 10.0, m2E1: 100, m2E2: 100, m2E3: 100, prixE1: 50, prixE2: 30, prixE3: 20)
+struct Response: Codable{
+    var results = [FestivalData]()
+}
 
-    var jeux = [Jeu(id: 1, nomJeu: "Jeu1", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 2, nomJeu: "Jeu2", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 3, nomJeu: "Jeu3", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur")]
+struct FestivalData: Codable{
+    var nomFestival : String
+    var annee : Int
+}
+
+struct ContentView: View {
+    @State private var results = [FestivalData]()
+    
+    func loadData(url: String){
+        
+        guard let lien = URL(string:url) else {return}
+        let request = URLRequest(url:lien)
+        URLSession.shared.dataTask(with:request){
+            data,response,error in
+            if let data = data{
+                if let decodedResponse = try? JSONDecoder().decode(Response.self, from:data){
+                    DispatchQueue.main.async{
+                        self.results = decodedResponse.results
+                    }
+                    return
+                }
+            }
+            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
+        }.resume()
+    }
+        var jeux = [Jeu(id: 1, nomJeu: "Jeu1", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 2, nomJeu: "Jeu2", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 3, nomJeu: "Jeu3", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur")]
+    //loadData(url: "backend-festival-app.herokuapp.com/festival/last")
     var body: some View {
         NavigationView{
             ZStack{
@@ -21,11 +48,17 @@ struct ContentView: View {
                         .resizable()
                         .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
-                    Text("Festival :\nnom du festival")
-                        .bold()
+                    HStack{
+                    Text("Festival : \n").bold()
                         .font(.largeTitle)
                         .foregroundColor(Color.black)
-                    Spacer()
+                    }
+                    List(results,id: \.nomFestival){
+                        item in
+                            Text(item.nomFestival).bold()
+                                .font(.largeTitle)
+                                .foregroundColor(Color.black)
+                    }
                     HStack{
                         NavigationLink(
                             destination: ListeJeuxFestival(listeJeuxFestival: ListeJeuxFestivalVM(jeux)),

@@ -2,7 +2,7 @@
 //  ListeJeuxFestivalVM.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/23/21.
+//  Created by Tiffany D & Aaron L on 3/23/21.
 //
 
 import Foundation
@@ -33,24 +33,24 @@ class ListeJeuxFestivalVM : ObservableObject {
     @Published var formViewOpen = false
     
     @Published var jeuxState : SearchJeuxState = .ready{
-            didSet{
+        didSet{
+            #if DEBUG
+            debugPrint("SearchPlvm : state.didSet = \(jeuxState)")
+            #endif
+            switch self.jeuxState { // state has changed
+            case let .loaded(data):    // new data has been loaded, to change all games of list
+                self.formViewOpen = false // close searchFormView, new games have been found
                 #if DEBUG
-                debugPrint("SearchPlvm : state.didSet = \(jeuxState)")
+                debugPrint("SearchJFVM: jeux loaded => formViewOpen=\(formViewOpen) -> model.new(jeux:)")
                 #endif
-                switch self.jeuxState { // state has changed
-                case let .loaded(data):    // new data has been loaded, to change all games of list
-                    self.formViewOpen = false // close searchFormView, new games have been found
-                    #if DEBUG
-                    debugPrint("SearchJFVM: jeux loaded => formViewOpen=\(formViewOpen) -> model.new(jeux:)")
-                    #endif
-                    self.jeux = data
-                case .loadingError:
-                    self.formViewOpen = true // reopen or keep open searchFormView as there is an error on loading new games
-                default:                   // nothing to do for ViewModel, perhaps for the view
-                    return
-                }
+                self.jeux = data
+            case .loadingError:
+                self.formViewOpen = true // reopen or keep open searchFormView as there is an error on loading new games
+            default:                   // nothing to do for ViewModel, perhaps for the view
+                return
             }
         }
+    }
     
     init(){
         self.jeux=[]
@@ -63,15 +63,14 @@ class ListeJeuxFestivalVM : ObservableObject {
     func listeJeux() -> [AnyView]{
         var res:[AnyView] = []
         if self.jeux.count>0{
-        for j in self.jeux{
-            let cur = AnyView(
-        NavigationView{
-        Text(j.nomJeu)
-            Spacer()
-        }
-        )
-        res.append(cur)
-        }
+            for j in self.jeux{
+                let cur = AnyView(
+                NavigationView{
+                    Text(j.nomJeu)
+                    Spacer()
+                })
+                res.append(cur)
+            }
         }else{
             res.append(AnyView(Text("Pas de jeux trouvés")))
         }

@@ -2,7 +2,7 @@
 //  DetailsJeuZoneVM.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/23/21.
+//  Created by Tiffany D on 3/23/21.
 //
 
 import Foundation

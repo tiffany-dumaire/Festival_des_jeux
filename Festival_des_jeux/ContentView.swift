@@ -48,10 +48,11 @@ struct ContentView: View {
                         .resizable()
                         .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
-                    HStack{
                     Text("Festival : \n").bold()
                         .font(.largeTitle)
                         .foregroundColor(Color.black)
+                    .onAppear{
+                        loadData(url: "https://backend-festival-app.herokuapp.com/festival/last")
                     }
                     List(results,id: \.nomFestival){
                         item in

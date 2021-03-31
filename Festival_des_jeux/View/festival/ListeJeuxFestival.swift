@@ -26,7 +26,7 @@ struct ListeJeuxFestival: View {
                     Spacer()
                 }
             }.background(
-                Image("backgroundList")
+                Image("new")
                     .resizable()
                     .scaledToFill()
                     .clipped()

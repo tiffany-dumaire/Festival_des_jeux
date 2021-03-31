@@ -32,6 +32,7 @@
 		57B2F5642607746200CA9233 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B2F5632607746200CA9233 /* SearchBar.swift */; };
 		57D865EF260B7CA9002C422C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D865EE260B7CA9002C422C /* MainView.swift */; };
 		7C2EAA9C261466B6007B7D5C /* SearchJeuxViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EAA9B261466B6007B7D5C /* SearchJeuxViewIntent.swift */; };
+		7C2EAAA126147067007B7D5C /* InOutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EAAA026147067007B7D5C /* InOutHelper.swift */; };
 		7C8E21CD260C91C8004DCDE6 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		57B2F5632607746200CA9233 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		57D865EE260B7CA9002C422C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7C2EAA9B261466B6007B7D5C /* SearchJeuxViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchJeuxViewIntent.swift; path = Festival_des_jeux/SearchJeuxViewIntent.swift; sourceTree = SOURCE_ROOT; };
+		7C2EAAA026147067007B7D5C /* InOutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutHelper.swift; sourceTree = "<group>"; };
 		7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 		57B2F543260764F400CA9233 /* Festival_des_jeux */ = {
 			isa = PBXGroup;
 			children = (
+				7C2EAA9F26147055007B7D5C /* Helper */,
 				57B2F5602607712700CA9233 /* Intent */,
 				57B2F557260765B600CA9233 /* ViewModel */,
 				57B2F5562607659D00CA9233 /* Model */,
@@ -255,6 +258,14 @@
 			path = "Optionnal view";
 			sourceTree = "<group>";
 		};
+		7C2EAA9F26147055007B7D5C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7C2EAAA026147067007B7D5C /* InOutHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,6 +351,7 @@
 				5774D8D62607DAA100954FE2 /* FestivalInformationsMenu.swift in Sources */,
 				571D84392609E92100EBA2A1 /* FestivalInformationsMenuVM.swift in Sources */,
 				571D844E2609EC3F00EBA2A1 /* DetailsJeuFestivalVM.swift in Sources */,
+				7C2EAAA126147067007B7D5C /* InOutHelper.swift in Sources */,
 				571D843F2609EBE100EBA2A1 /* ListeJeuxZoneVM.swift in Sources */,
 				5774D8E32607E78100954FE2 /* DetailsJeuEditeur.swift in Sources */,
 				571D84482609EC1600EBA2A1 /* DetailsJeuEditeurVM.swift in Sources */,

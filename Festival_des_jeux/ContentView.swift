@@ -28,7 +28,7 @@ struct ContentView: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestival(listeJeuxFestival: ListeJeuxFestivalVM(f1,jeux)),
+                            destination: ListeJeuxFestival(listeJeuxFestival: ListeJeuxFestivalVM(jeux)),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()

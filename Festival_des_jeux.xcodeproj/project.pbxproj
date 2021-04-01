@@ -263,14 +263,14 @@
 		57B2F5562607659D00CA9233 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				57B2F55926076B8C00CA9233 /* User.swift */,
-				5774D8D92607E6BF00954FE2 /* Jeu.swift */,
-				571D843B2609E99C00EBA2A1 /* Festival.swift */,
-				577500BE2614ABB600D94344 /* Zone.swift */,
 				577500C12614B11200D94344 /* Editeur.swift */,
-				575581CE2615B57E00A2EC47 /* ListeJeuxZone.swift */,
-				575581D12615C3AE00A2EC47 /* ListeJeuxFestival.swift */,
+				571D843B2609E99C00EBA2A1 /* Festival.swift */,
+				5774D8D92607E6BF00954FE2 /* Jeu.swift */,
 				575581D42615C64200A2EC47 /* ListeJeuxEditeur.swift */,
+				575581D12615C3AE00A2EC47 /* ListeJeuxFestival.swift */,
+				575581CE2615B57E00A2EC47 /* ListeJeuxZone.swift */,
+				57B2F55926076B8C00CA9233 /* User.swift */,
+				577500BE2614ABB600D94344 /* Zone.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,11 +278,11 @@
 		57B2F557260765B600CA9233 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				571D84312609E8B200EBA2A1 /* editeur */,
+				571D84302609E8A700EBA2A1 /* festival */,
 				577500C7261518B200D94344 /* jeu */,
 				571D84332609E8C200EBA2A1 /* menu */,
 				571D84322609E8B900EBA2A1 /* zone */,
-				571D84312609E8B200EBA2A1 /* editeur */,
-				571D84302609E8A700EBA2A1 /* festival */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";

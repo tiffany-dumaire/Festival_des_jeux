@@ -8,10 +8,9 @@
 import Foundation
 import SwiftUI
 
-class FestivalVM: Identifiable{
+class FestivalVM: ObservableObject{
     
-    var id = UUID()
-    @ObservedObject private(set) var model : Festival
+    private(set) var model : Festival
     
     var idFestival : Int{
         return model.idFestival

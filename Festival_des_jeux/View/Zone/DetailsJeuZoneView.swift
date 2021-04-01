@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailsJeuZone: View {
+struct DetailsJeuZoneView: View {
     var body: some View {
         NavigationView{
             ZStack{
@@ -33,6 +33,6 @@ struct DetailsJeuZone: View {
 
 struct DetailsJeuZone_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsJeuZone()
+        DetailsJeuZoneView()
     }
 }

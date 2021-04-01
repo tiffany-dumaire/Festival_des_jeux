@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct ListeJeuxZone: View {
+struct ListeJeuxZoneView: View {
+    
+    @ObservedObject var listeZoneVM : ListeJeuxZoneVM
+    var intent : ListeJeuxZoneIntent
     var body: some View {
         NavigationView{
             ZStack{
@@ -33,6 +36,6 @@ struct ListeJeuxZone: View {
 
 struct ListeJeuxZone_Previews: PreviewProvider {
     static var previews: some View {
-        ListeJeuxZone()
+        ListeJeuxZoneView()
     }
 }

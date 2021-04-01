@@ -20,14 +20,18 @@
 		575581CF2615B57E00A2EC47 /* ListeJeuxZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581CE2615B57E00A2EC47 /* ListeJeuxZone.swift */; };
 		575581D22615C3AE00A2EC47 /* ListeJeuxFestival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581D12615C3AE00A2EC47 /* ListeJeuxFestival.swift */; };
 		575581D52615C64200A2EC47 /* ListeJeuxEditeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581D42615C64200A2EC47 /* ListeJeuxEditeur.swift */; };
-		5774D8CC2607DA4400954FE2 /* ListeJeuxFestival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8CB2607DA4400954FE2 /* ListeJeuxFestival.swift */; };
-		5774D8CF2607DA6100954FE2 /* ListeJeuxEditeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8CE2607DA6100954FE2 /* ListeJeuxEditeur.swift */; };
-		5774D8D22607DA7400954FE2 /* ListeJeuxZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8D12607DA7400954FE2 /* ListeJeuxZone.swift */; };
+		575581DB2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581DA2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift */; };
+		575581E42616254400A2EC47 /* FestivalIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581E32616254400A2EC47 /* FestivalIntent.swift */; };
+		575581E82616497100A2EC47 /* ListeJeuxEditeurIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581E72616497100A2EC47 /* ListeJeuxEditeurIntent.swift */; };
+		575581F0261654CB00A2EC47 /* ListeEditeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581EF261654CB00A2EC47 /* ListeEditeurView.swift */; };
+		5774D8CC2607DA4400954FE2 /* ListeJeuxFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8CB2607DA4400954FE2 /* ListeJeuxFestivalView.swift */; };
+		5774D8CF2607DA6100954FE2 /* ListeJeuxEditeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8CE2607DA6100954FE2 /* ListeJeuxEditeurView.swift */; };
+		5774D8D22607DA7400954FE2 /* ListeJeuxZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8D12607DA7400954FE2 /* ListeJeuxZoneView.swift */; };
 		5774D8D62607DAA100954FE2 /* FestivalInformationsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8D52607DAA100954FE2 /* FestivalInformationsMenu.swift */; };
 		5774D8DA2607E6BF00954FE2 /* Jeu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8D92607E6BF00954FE2 /* Jeu.swift */; };
-		5774D8DF2607E75700954FE2 /* DetailsJeuFestival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8DE2607E75700954FE2 /* DetailsJeuFestival.swift */; };
-		5774D8E32607E78100954FE2 /* DetailsJeuEditeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8E22607E78100954FE2 /* DetailsJeuEditeur.swift */; };
-		5774D8E62607E79100954FE2 /* DetailsJeuZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8E52607E79100954FE2 /* DetailsJeuZone.swift */; };
+		5774D8DF2607E75700954FE2 /* DetailsJeuFestivalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8DE2607E75700954FE2 /* DetailsJeuFestivalView.swift */; };
+		5774D8E32607E78100954FE2 /* DetailsJeuEditeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8E22607E78100954FE2 /* DetailsJeuEditeurView.swift */; };
+		5774D8E62607E79100954FE2 /* DetailsJeuZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8E52607E79100954FE2 /* DetailsJeuZoneView.swift */; };
 		577500BF2614ABB600D94344 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577500BE2614ABB600D94344 /* Zone.swift */; };
 		577500C22614B11200D94344 /* Editeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577500C12614B11200D94344 /* Editeur.swift */; };
 		577500C52615168500D94344 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577500C42615168500D94344 /* LoadData.swift */; };
@@ -61,14 +65,18 @@
 		575581CE2615B57E00A2EC47 /* ListeJeuxZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxZone.swift; sourceTree = "<group>"; };
 		575581D12615C3AE00A2EC47 /* ListeJeuxFestival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestival.swift; sourceTree = "<group>"; };
 		575581D42615C64200A2EC47 /* ListeJeuxEditeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxEditeur.swift; sourceTree = "<group>"; };
-		5774D8CB2607DA4400954FE2 /* ListeJeuxFestival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestival.swift; sourceTree = "<group>"; };
-		5774D8CE2607DA6100954FE2 /* ListeJeuxEditeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxEditeur.swift; sourceTree = "<group>"; };
-		5774D8D12607DA7400954FE2 /* ListeJeuxZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxZone.swift; sourceTree = "<group>"; };
+		575581DA2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestivalIntent.swift; sourceTree = "<group>"; };
+		575581E32616254400A2EC47 /* FestivalIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalIntent.swift; sourceTree = "<group>"; };
+		575581E72616497100A2EC47 /* ListeJeuxEditeurIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxEditeurIntent.swift; sourceTree = "<group>"; };
+		575581EF261654CB00A2EC47 /* ListeEditeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeEditeurView.swift; sourceTree = "<group>"; };
+		5774D8CB2607DA4400954FE2 /* ListeJeuxFestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestivalView.swift; sourceTree = "<group>"; };
+		5774D8CE2607DA6100954FE2 /* ListeJeuxEditeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxEditeurView.swift; sourceTree = "<group>"; };
+		5774D8D12607DA7400954FE2 /* ListeJeuxZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxZoneView.swift; sourceTree = "<group>"; };
 		5774D8D52607DAA100954FE2 /* FestivalInformationsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalInformationsMenu.swift; sourceTree = "<group>"; };
 		5774D8D92607E6BF00954FE2 /* Jeu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jeu.swift; sourceTree = "<group>"; };
-		5774D8DE2607E75700954FE2 /* DetailsJeuFestival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuFestival.swift; sourceTree = "<group>"; };
-		5774D8E22607E78100954FE2 /* DetailsJeuEditeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuEditeur.swift; sourceTree = "<group>"; };
-		5774D8E52607E79100954FE2 /* DetailsJeuZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuZone.swift; sourceTree = "<group>"; };
+		5774D8DE2607E75700954FE2 /* DetailsJeuFestivalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuFestivalView.swift; sourceTree = "<group>"; };
+		5774D8E22607E78100954FE2 /* DetailsJeuEditeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuEditeurView.swift; sourceTree = "<group>"; };
+		5774D8E52607E79100954FE2 /* DetailsJeuZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuZoneView.swift; sourceTree = "<group>"; };
 		577500BE2614ABB600D94344 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
 		577500C12614B11200D94344 /* Editeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editeur.swift; sourceTree = "<group>"; };
 		577500C42615168500D94344 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
@@ -142,8 +150,8 @@
 		5774D8C926079CDC00954FE2 /* festival */ = {
 			isa = PBXGroup;
 			children = (
-				5774D8CB2607DA4400954FE2 /* ListeJeuxFestival.swift */,
-				5774D8DE2607E75700954FE2 /* DetailsJeuFestival.swift */,
+				5774D8CB2607DA4400954FE2 /* ListeJeuxFestivalView.swift */,
+				5774D8DE2607E75700954FE2 /* DetailsJeuFestivalView.swift */,
 			);
 			path = festival;
 			sourceTree = "<group>";
@@ -159,8 +167,9 @@
 		5774D8DC2607E72500954FE2 /* Editeur */ = {
 			isa = PBXGroup;
 			children = (
-				5774D8CE2607DA6100954FE2 /* ListeJeuxEditeur.swift */,
-				5774D8E22607E78100954FE2 /* DetailsJeuEditeur.swift */,
+				5774D8CE2607DA6100954FE2 /* ListeJeuxEditeurView.swift */,
+				5774D8E22607E78100954FE2 /* DetailsJeuEditeurView.swift */,
+				575581EF261654CB00A2EC47 /* ListeEditeurView.swift */,
 			);
 			path = Editeur;
 			sourceTree = "<group>";
@@ -168,8 +177,8 @@
 		5774D8DD2607E72E00954FE2 /* Zone */ = {
 			isa = PBXGroup;
 			children = (
-				5774D8D12607DA7400954FE2 /* ListeJeuxZone.swift */,
-				5774D8E52607E79100954FE2 /* DetailsJeuZone.swift */,
+				5774D8D12607DA7400954FE2 /* ListeJeuxZoneView.swift */,
+				5774D8E52607E79100954FE2 /* DetailsJeuZoneView.swift */,
 			);
 			path = Zone;
 			sourceTree = "<group>";
@@ -185,6 +194,8 @@
 		577500CE26151D9800D94344 /* festival */ = {
 			isa = PBXGroup;
 			children = (
+				575581DA2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift */,
+				575581E32616254400A2EC47 /* FestivalIntent.swift */,
 			);
 			path = festival;
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 		577500CF26151DA000D94344 /* editeur */ = {
 			isa = PBXGroup;
 			children = (
+				575581E72616497100A2EC47 /* ListeJeuxEditeurIntent.swift */,
 			);
 			path = editeur;
 			sourceTree = "<group>";
@@ -403,36 +415,40 @@
 				57B2F547260764F400CA9233 /* ContentView.swift in Sources */,
 				571D84452609EC0500EBA2A1 /* ListeJeuxEditeurVM.swift in Sources */,
 				57B2F545260764F400CA9233 /* Festival_des_jeuxApp.swift in Sources */,
-				5774D8CF2607DA6100954FE2 /* ListeJeuxEditeur.swift in Sources */,
+				5774D8CF2607DA6100954FE2 /* ListeJeuxEditeurView.swift in Sources */,
+				575581DB2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift in Sources */,
 				575581D52615C64200A2EC47 /* ListeJeuxEditeur.swift in Sources */,
 				57B2F5642607746200CA9233 /* SearchBar.swift in Sources */,
-				5774D8DF2607E75700954FE2 /* DetailsJeuFestival.swift in Sources */,
+				5774D8DF2607E75700954FE2 /* DetailsJeuFestivalView.swift in Sources */,
 				575581C926159EFE00A2EC47 /* ZoneVM.swift in Sources */,
 				575581CF2615B57E00A2EC47 /* ListeJeuxZone.swift in Sources */,
 				5774D8DA2607E6BF00954FE2 /* Jeu.swift in Sources */,
 				57D865EF260B7CA9002C422C /* MainView.swift in Sources */,
-				5774D8CC2607DA4400954FE2 /* ListeJeuxFestival.swift in Sources */,
+				5774D8CC2607DA4400954FE2 /* ListeJeuxFestivalView.swift in Sources */,
 				57B2F55E26076FDF00CA9233 /* LoginView.swift in Sources */,
 				571D843C2609E99C00EBA2A1 /* Festival.swift in Sources */,
 				577500D226151DC300D94344 /* ListeJeuxZoneIntent.swift in Sources */,
 				571D84422609EBF200EBA2A1 /* DetailsJeuZoneVM.swift in Sources */,
 				57B2F55A26076B8C00CA9233 /* User.swift in Sources */,
+				575581E82616497100A2EC47 /* ListeJeuxEditeurIntent.swift in Sources */,
 				5774D8D62607DAA100954FE2 /* FestivalInformationsMenu.swift in Sources */,
 				571D84392609E92100EBA2A1 /* FestivalInformationsMenuVM.swift in Sources */,
 				577500C52615168500D94344 /* LoadData.swift in Sources */,
 				571D844E2609EC3F00EBA2A1 /* DetailsJeuFestivalVM.swift in Sources */,
+				575581F0261654CB00A2EC47 /* ListeEditeurView.swift in Sources */,
 				577500CC26151A3A00D94344 /* EditeurVM.swift in Sources */,
 				577500C9261518C800D94344 /* JeuVM.swift in Sources */,
 				7C2EAAA126147067007B7D5C /* InOutHelper.swift in Sources */,
+				575581E42616254400A2EC47 /* FestivalIntent.swift in Sources */,
 				571D843F2609EBE100EBA2A1 /* ListeJeuxZoneVM.swift in Sources */,
-				5774D8E32607E78100954FE2 /* DetailsJeuEditeur.swift in Sources */,
+				5774D8E32607E78100954FE2 /* DetailsJeuEditeurView.swift in Sources */,
 				571D84482609EC1600EBA2A1 /* DetailsJeuEditeurVM.swift in Sources */,
-				5774D8E62607E79100954FE2 /* DetailsJeuZone.swift in Sources */,
+				5774D8E62607E79100954FE2 /* DetailsJeuZoneView.swift in Sources */,
 				575581D22615C3AE00A2EC47 /* ListeJeuxFestival.swift in Sources */,
 				7C2EAA9C261466B6007B7D5C /* SearchJeuxViewIntent.swift in Sources */,
 				571D844B2609EC3000EBA2A1 /* ListeJeuxFestivalVM.swift in Sources */,
 				575581CC2615B0C600A2EC47 /* FestivalVM.swift in Sources */,
-				5774D8D22607DA7400954FE2 /* ListeJeuxZone.swift in Sources */,
+				5774D8D22607DA7400954FE2 /* ListeJeuxZoneView.swift in Sources */,
 				577500C22614B11200D94344 /* Editeur.swift in Sources */,
 				7C8E21CD260C91C8004DCDE6 /* CarouselView.swift in Sources */,
 				577500BF2614ABB600D94344 /* Zone.swift in Sources */,

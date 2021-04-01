@@ -18,9 +18,9 @@ class SearchJeuxViewIntent{
     
     func loaded(loaded: [Jeu]){
             #if DEBUG
-            debugPrint("SearchIntent: \(self.liste.jeuxState) => \(loaded.count) jeux loaded")
+            debugPrint("SearchIntent: \(self.liste.state) => \(loaded.count) jeux loaded")
             #endif
-            self.liste.jeuxState = .ready
+            self.liste.state = .ready
         }
     
     func httpJsonLoaded(result: Result<[Jeu],HttpRequestError>){
@@ -31,13 +31,13 @@ class SearchJeuxViewIntent{
                 #endif
                 if let game = gameFilter{
                     let jeux = data.filter( { jeu in jeu.nomJeu.lowercased().contains(game.lowercased()) } )
-                    liste.jeuxState = .loaded(jeux)
+                    liste.state = .loaded(jeux)
                 }
                 else{
-                    liste.jeuxState = .loaded(data)
+                    liste.state = .loaded(data)
                 }
             case let .failure(error):
-                liste.jeuxState = .loadingError(error)
+                liste.state = .loadingError(error)
             }
         }
     
@@ -49,7 +49,7 @@ class SearchJeuxViewIntent{
             debugPrint("SearchIntent: .loading(\(url))")
             debugPrint("SearchIntent: asyncLoadJeux")
             #endif
-            liste.jeuxState = .loading(url)
+            liste.state = .loading(url)
             if let url = URL(string:url){
                 InOutHelper.getJsonData(from: url, endofrequest: httpJsonLoaded)
             }

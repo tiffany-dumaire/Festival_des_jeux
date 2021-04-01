@@ -1,5 +1,5 @@
 //
-//  ListeJeuxZoneIntent.swift
+//  FestivalIntent.swift
 //  Festival_des_jeux
 //
 //  Created by Tiffany D on 3/31/21.
@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-class ListeJeuxZoneIntent {
+class FestivalIntent {
     
-    @ObservedObject var jeuxZone : ListeJeuxZoneVM
+    @ObservedObject var festival : FestivalVM
     
-    init(jeuxZone: ListeJeuxZoneVM){
-        self.jeuxZone = jeuxZone
+    init(festival: FestivalVM){
+        self.festival = festival
     }
     
     func listeJeuxBack(){

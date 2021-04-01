@@ -36,7 +36,7 @@ class ListeJeuxZone: ObservableObject {
             - zone: une zone à ajouter à la liste
      */
     func add(zone:Zone){
-        self.zone.append(zone)
+        self.zones.append(zone)
         self.delegate?.addZone(zone:zone)
     }
     

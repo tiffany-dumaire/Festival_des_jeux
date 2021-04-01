@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ListeJeuxZoneView: View {
+    
+    @ObservedObject var listeZoneVM : ListeJeuxZoneVM
+    var intent : ListeJeuxZoneIntent
     var body: some View {
         NavigationView{
             ZStack{

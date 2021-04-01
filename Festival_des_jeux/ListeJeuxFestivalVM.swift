@@ -53,7 +53,7 @@ class ListeJeuxFestivalVM : ObservableObject {
     
     init(_ jeux: ListeJeuxFestival){
         self.model = jeux
-        self.model.delegate = self
+        //self.model.delegate = self
     }
     
     func listeJeux() -> [AnyView]{
@@ -68,9 +68,7 @@ class ListeJeuxFestivalVM : ObservableObject {
                         Text("Age minimum requis : \(j.ageMin)")
                         Text("Durée du jeu : \(j.duree)h")
                         Text("Lien vers la notive :\(j.lienNotice)")
-                        
                     }
-                    
                     Spacer()
                 })
                 res.append(cur)

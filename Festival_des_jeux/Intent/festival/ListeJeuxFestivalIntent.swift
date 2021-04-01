@@ -30,8 +30,10 @@ class ListeJeuxFestivalIntent {
         self.listeJeuxFestival = listeJeuxFestival
     }
     
-    func loaded(jeuxFestival:[Jeu]){
-        self.listeJeuxFestival.state = .ready
+    func loadJeux(url:String){
+        self.listeJeuxFestival.state = .loading(url)
+        InOutHelper.httpGetJsonData(from: url, endofrequest: httpJsonLoaded)
+        
     }
     
     func httpsJsonLoaded(result:Result<[Jeu],HttpRequestError>){
@@ -45,12 +47,5 @@ class ListeJeuxFestivalIntent {
             listeJeuxFestival.state = .loadingError(error)
         }
     }
-    
-    func dataListeJeuxFestival(){
-        var url : URL = "https://backend-festival-app.herokuapp.com/jeu/last/allbyfestival"
-        self.listeJeuxFestival.state = .loading(url)
-        LoadData.loadJeuxFestival(url:url,endofrequest:httpJsonLoaded)
-    }
-    
     
 }

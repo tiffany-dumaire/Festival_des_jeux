@@ -2,7 +2,7 @@
 //  EditeurVM.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/31/21.
+//  Created by user188898 on 3/23/21.
 //
 
 import Foundation
@@ -10,7 +10,6 @@ import SwiftUI
 
 class EditeurVM: Identifiable{
     
-    var id = UUID()
     @ObservedObject private(set) var model : Editeur
     
     var idEditeur : Int{
@@ -30,7 +29,7 @@ class EditeurVM: Identifiable{
         - Parameters :
             - editeur: une instance de Editeur qui initialisera le model
      */
-    init(editeur:Editeur){
+    init(_ editeur:Editeur){
         self.model = editeur
     }
 }

@@ -7,13 +7,40 @@
 
 import Foundation
 
+/*enum HttpRequestError : Error, CustomStringConvertible{
+    
+    case fileNotFound(String)
+    case badURL(String)
+    case failingURL(URLError)
+    case requestFailed
+    case outputFailed
+    case JsonDecodingFailed
+    case JsonEncodingFailed
+    case initDataFailed
+    case unknown
+    
+    var description : String {
+        switch self {
+        case .badURL(let url): return "Bad URL : \(url)"
+        case .failingURL(let error): return "URL error : \(error.failureURLString ?? "")\n \(error.localizedDescription)"
+        case .requestFailed: return "Request Failed"
+        case .outputFailed: return "Output data Failed"
+        case .JsonDecodingFailed: return "JSON decoding failed"
+        case .JsonEncodingFailed: return "JSON encoding failed"
+        case .initDataFailed: return "Bad data format: initialization of data failed"
+        case .unknown: return "unknown error"
+        case .fileNotFound(let filename): return "File \(filename) not found"
+        }
+    }
+}*/
+
 /**
     Structure de données Festival Data qui permettra de récupérer les festivals (id,nom,annee) pour l'affichage de la Start View (ContentView.swift)
  */
 struct FestivalData:Codable{
     public var idFestival:Int
     public var nomFestival:String
-    public var anneeFestival:Int
+    public var annee:Int
 }
 
 /**
@@ -35,8 +62,13 @@ struct EditeurData:Codable{
     
 }
 
+struct JeuxData : Codable {
+    public var jeux: [JeuData]
+}
+
 
 class LoadData {
+    
     var resultFestival:[Festival]
     var resultsJeu: [Jeu] = []
     var resultsEditeurs: [Editeur] = []
@@ -52,6 +84,78 @@ class LoadData {
         self.resultsZone = []
     }
     
+    /**
+        Récupération des données du festival
+        - PArameters:
+            - data: tableau de FestivalData
+     */
+    static func festivalDetailData(data:[FestivalData]) -> [Festival]? {
+        var festival = [Festival]()
+        for d in data {
+            let f = Festival(idFestival: d.idFestival, nomFestival: d.nomFestival, annee: d.annee)
+            festival.append(f)
+        }
+        return festival
+    }
+    
+    
+    static func loadFestival(url surl: String, endofrequest:@escaping (Result<[Festival],HttpRequestError>) -> Void){
+        guard let url = URL(string: surl) else {
+            endofrequest(.failure(.badURL(surl)))
+            return
+        }
+        self.loadFestival(url: url, endofrequest: endofrequest)
+    }
+    
+    static func loadFestival(url: URL,  endofrequest:@escaping (Result<[Festival],HttpRequestError>) -> Void){
+        self.searchFestival(url: url, endofrequest: endofrequest)
+    }
+    
+    static func searchFestival(url: URL, endofrequest: @escaping (Result<[Festival],HttpRequestError>) -> Void){
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let decodedData : Decodable?
+                    decodedData = try? JSONDecoder().decode([FestivalData].self, from: data)
+                guard let decodedResponse = decodedData else {
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
+                var festival : [FestivalData]
+                festival = (decodedResponse as! [FestivalData])
+                guard let festivals = self.festivalDetailData(data:festival) else{
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
+                DispatchQueue.main.async {
+                    endofrequest(.success(festivals))
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    if let error = error {
+                        guard let error = error as? URLError else {
+                            endofrequest(.failure(.unknown))
+                            return
+                        }
+                        endofrequest(.failure(.failingURL(error)))
+                    }
+                    else{
+                        guard let response = response as? HTTPURLResponse else{
+                            endofrequest(.failure(.unknown))
+                            return
+                        }
+                        guard response.statusCode == 200 else {
+                            endofrequest(.failure(.requestFailed))
+                            return
+                        }
+                        endofrequest(.failure(.unknown))
+                    }
+                }
+            }
+        }.resume()
+    }
+
     /**
         Récupération des données de jeux
             - Parameters:
@@ -76,18 +180,18 @@ class LoadData {
                 - data: tableau de EditeurData
      */
     static func jeuEditeurDetailsData(data:[EditeurData]) -> [Editeur]? {
-        //var jeuEditeurs = [Editeur]()
+        var jeuEditeurs = [Editeur]()
         //for d in data {
             
         //}
-       // return jeuEditeurs
+       return jeuEditeurs
     }
     
     static func jeuZoneDetailsData(data:[ZoneData]) -> [Zone]? {
-        //var zones = [Zone]()
+        var zones = [Zone]()
         //for d in data {
             
-        //}
+        return zones
     }
     
     static func searchJeuxFestival(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
@@ -102,12 +206,12 @@ class LoadData {
                 }
                 var jeuxFestival : [JeuData]
                 jeuxFestival = (decodedResponse as! [JeuData])
-                guard let jeux = self.loadJeuxFestival(data: jeuxFestival) else{
+                guard let jeux = self.jeuDetailsData(data:jeuxFestival) else{
                     DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
                     return
                 }
-                DispatchQueue.main.async {
-                    endofrequest(.success(jeux))
+                DispatchQueue.main.async{
+                   endofrequest(.success(jeux))
                 }
             }
             else{

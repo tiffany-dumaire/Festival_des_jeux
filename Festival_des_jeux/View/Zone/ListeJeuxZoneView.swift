@@ -83,7 +83,7 @@ struct ListeJeuxZoneView: View {
                ZStack{
                    List{
                        ForEach(self.listeZoneVM.zones.filter(filterSearch)){ zone in
-                           NavigationLink(destination: ListeJeuxView(jeux: zone.jeuxReserve)
+                        NavigationLink(destination: ListeJeuxView(jeux: zone.jeuxReserve)
                            )
                            {
                                ZoneRow(zone: zone)

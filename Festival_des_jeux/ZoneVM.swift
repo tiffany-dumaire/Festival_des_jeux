@@ -22,8 +22,8 @@ class ZoneVM : Identifiable{
     }
     
     var jeuxReserve : [Jeu]{
-            return model.jeuxReserve
-        }
+        return model.jeuxReserve
+    }
     
     /**
         Initialisation de la classe ZoneVM

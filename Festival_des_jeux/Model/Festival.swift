@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Festival : ObservableObject {
+class Festival : Decodable, ObservableObject {
     
     private(set) var idFestival : Int
     private(set) var nomFestival : String

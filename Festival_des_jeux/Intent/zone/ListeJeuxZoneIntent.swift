@@ -8,17 +8,20 @@
 import Foundation
 import SwiftUI
 
+/**
+    Structure de données ZoneData qui permettra de récupérer les zones et la liste des jeux associés
+ */
+struct ZoneData:Codable{
+    public var idZone:Int
+    public var nomZone:String
+}
+
 class ListeJeuxZoneIntent {
     
     @ObservedObject var jeuxZone : ListeJeuxZoneVM
     
     init(jeuxZone: ListeJeuxZoneVM){
         self.jeuxZone = jeuxZone
-    }
-    
-    func listeJeuxBack(){
-        var url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyzone"
-        self.jeuxZone.state = .loading(url)        
     }
     
     func loaded(listeZones:[Zone]){
@@ -40,5 +43,12 @@ class ListeJeuxZoneIntent {
                 jeuxZone.state = .loadingError(error)
         }
     }
+    
+    func listeJeuxBack() {
+            let url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyzone"
+            self.jeuxZone.state = .loading(url)
+            //call API with httJson Loaded
+            LoadData.loadZones(url: url,endofrequest: httpJsonLoaded)
+        }
     
 }

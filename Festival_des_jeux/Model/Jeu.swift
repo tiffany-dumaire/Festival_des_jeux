@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class Jeu: ObservableObject, Decodable {
+class Jeu: Identifiable,ObservableObject, Decodable {
     
     private(set) var idJeu: Int
     private(set) var nomJeu: String

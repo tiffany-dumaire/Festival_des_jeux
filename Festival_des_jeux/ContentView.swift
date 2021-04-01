@@ -37,7 +37,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                     Spacer()
-                    HStack{
+                    HStack{/*
                         NavigationLink(
                             destination: ListeJeuxZoneView(),
                             label: {
@@ -46,7 +46,7 @@ struct ContentView: View {
                             }).padding()
                             .background(Color.blue)
                             .cornerRadius(30)
-                            .foregroundColor(.white)
+                            .foregroundColor(.white)*/
                         
                     }
                     Spacer()

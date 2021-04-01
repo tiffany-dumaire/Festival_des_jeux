@@ -2,12 +2,13 @@
 //  ContentView.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Aaron L on 3/21/21.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+        
     var body: some View {
         NavigationView{
             ZStack{
@@ -18,14 +19,15 @@ struct ContentView: View {
                         .resizable()
                         .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
-                    Text("Festival :\nnom du festival")
-                        .bold()
-                        .font(.largeTitle)
-                        .foregroundColor(Color.black)
-                    Spacer()
+                    HStack{
+                        Text("Festival : \n").bold()
+                            .font(.largeTitle)
+                            .foregroundColor(Color.black)
+                        Spacer()
+                    }
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestival(),
+                            destination: ListeJeuxFestivalView(),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()
@@ -35,22 +37,22 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                     Spacer()
-                    HStack{
+                    HStack{/*
                         NavigationLink(
-                            destination: ListeJeuxZone(),
+                            destination: ListeJeuxZoneView(),
                             label: {
                                 Text(" Liste des jeux par Zone ")
                                     .bold()
                             }).padding()
                             .background(Color.blue)
                             .cornerRadius(30)
-                            .foregroundColor(.white)
+                            .foregroundColor(.white)*/
                         
                     }
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxEditeur(),
+                            destination: ListeJeuxEditeurView(),
                             label: {
                                 Text("Liste des jeux par Editeur")
                                     .bold()

@@ -2,15 +2,20 @@
 //  ListeJeuxFestival.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Aaron L & Tiffany D on 3/21/21.
 //
 
 import SwiftUI
 
-struct ListeJeuxFestival: View {
+struct ListeJeuxFestivalView: View {
+    
+    //@ObservedObject var listeJeuxFestival: ListeJeuxFestivalVM
+    //var jeux: [Jeu]
+    
     var body: some View {
         NavigationView{
             ZStack{
+                //CarouselView(itemHeight: 500, views: listeJeuxFestival.listeJeux())
                 VStack{
                     HStack{
                         Spacer()
@@ -21,7 +26,7 @@ struct ListeJeuxFestival: View {
                     Spacer()
                 }
             }.background(
-                Image("backgroundList")
+                Image("new")
                     .resizable()
                     .scaledToFill()
                     .clipped()
@@ -33,6 +38,6 @@ struct ListeJeuxFestival: View {
 
 struct ListeJeuxFestival_Previews: PreviewProvider {
     static var previews: some View {
-        ListeJeuxFestival()
+        ListeJeuxFestivalView()
     }
 }

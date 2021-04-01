@@ -1,0 +1,58 @@
+//
+//  SearchJeuxViewIntent.swift
+//  Festival_des_jeux
+//
+//  Created by Aaron L on 3/31/21.
+//
+
+import Foundation
+import Swift
+
+class SearchJeuxViewIntent{
+    
+    var liste : ListeJeuxFestivalVM
+    
+    init(_ liste: ListeJeuxFestivalVM){
+        self.liste = liste
+    }
+    
+    func loaded(loaded: [Jeu]){
+            #if DEBUG
+            debugPrint("SearchIntent: \(self.liste.state) => \(loaded.count) jeux loaded")
+            #endif
+            self.liste.state = .ready
+        }
+    
+    func httpJsonLoaded(result: Result<[Jeu],HttpRequestError>){
+            switch result {
+            case let .success(data):
+                #if DEBUG
+                debugPrint("SearchIntent: httpJsonLoaded -> success -> .loaded(games)")
+                #endif
+                if let game = gameFilter{
+                    let jeux = data.filter( { jeu in jeu.nomJeu.lowercased().contains(game.lowercased()) } )
+                    liste.state = .loaded(jeux)
+                }
+                else{
+                    liste.state = .loaded(data)
+                }
+            case let .failure(error):
+                liste.state = .loadingError(error)
+            }
+        }
+    
+    var gameFilter : String? = nil
+    
+    func loadPlaylist(url : String, gameFilter: String?){
+            self.gameFilter = gameFilter
+            #if DEBUG
+            debugPrint("SearchIntent: .loading(\(url))")
+            debugPrint("SearchIntent: asyncLoadJeux")
+            #endif
+            liste.state = .loading(url)
+            if let url = URL(string:url){
+                InOutHelper.getJsonData(from: url, endofrequest: httpJsonLoaded)
+            }
+        }
+    
+}

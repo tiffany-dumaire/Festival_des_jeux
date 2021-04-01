@@ -1,13 +1,13 @@
 //
-//  ListeJeuxZone.swift
+//  ListeJeuxEditeur.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Tiffany D on 3/21/21.
 //
 
 import SwiftUI
 
-struct ListeJeuxZone: View {
+struct ListeJeuxEditeurView: View {
     var body: some View {
         NavigationView{
             ZStack{
@@ -19,20 +19,34 @@ struct ListeJeuxZone: View {
                         .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
                     Spacer()
+                    HStack{
+                        NavigationLink(
+                            destination: DetailsJeuView(),
+                            label: {
+                                Text("Details des jeux")
+                                    .bold()
+                            }).padding()
+                            .background(Color.blue)
+                            .cornerRadius(30)
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
                 }
             }.background(
-                Image("backgroundList")
+                Image("new")
                     .resizable()
                     .scaledToFill()
                     .clipped()
                 )
             .edgesIgnoringSafeArea(.all)
         }
+        
     }
 }
 
-struct ListeJeuxZone_Previews: PreviewProvider {
+struct ListeJeuxEditeur_Previews: PreviewProvider {
     static var previews: some View {
-        ListeJeuxZone()
+        ListeJeuxEditeurView()
     }
 }
+

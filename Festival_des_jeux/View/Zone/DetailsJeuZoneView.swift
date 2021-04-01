@@ -2,12 +2,12 @@
 //  DetailsJeuZone.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Tiffany D on 3/21/21.
 //
 
 import SwiftUI
 
-struct DetailsJeuZone: View {
+struct DetailsJeuZoneView: View {
     var body: some View {
         NavigationView{
             ZStack{
@@ -33,6 +33,6 @@ struct DetailsJeuZone: View {
 
 struct DetailsJeuZone_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsJeuZone()
+        DetailsJeuZoneView()
     }
 }

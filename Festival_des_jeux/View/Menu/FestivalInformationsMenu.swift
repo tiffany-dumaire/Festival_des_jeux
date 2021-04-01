@@ -2,12 +2,12 @@
 //  FestivalInformationsMenu.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Tiffany D & Aaron L on 3/21/21.
 //
 
 import SwiftUI
 
-struct FestivalInformationsMenu: View {
+struct FestivalInformationsMenu: View {    
     var body: some View {
         NavigationView{
             ZStack{
@@ -25,7 +25,7 @@ struct FestivalInformationsMenu: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestival(),
+                            destination: ListeJeuxFestivalView(),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()
@@ -36,21 +36,21 @@ struct FestivalInformationsMenu: View {
                     }
                     Spacer()
                     HStack{
-                        NavigationLink(
-                            destination: ListeJeuxZone(),
+                      /*NavigationLink(
+                            destination: ListeJeuxZoneView(),
                             label: {
-                                Text(" Liste des jeux par Zone ")
-                                    .bold()
+                               Text(" Liste des jeux par Zone ")
+                                   .bold()
                             }).padding()
                             .background(Color.blue)
-                            .cornerRadius(30)
+                          .cornerRadius(30)
                             .foregroundColor(.white)
-                        
+                        */
                     }
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxEditeur(),
+                            destination: ListeJeuxEditeurView(),
                             label: {
                                 Text("Liste des jeux par Editeur")
                                     .bold()

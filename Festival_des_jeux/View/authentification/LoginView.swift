@@ -3,7 +3,7 @@
 //  Festival_des_jeux
 //
 //  Created by Tiffany D on 3/21/21.
-//  Vue correspondant à la page de connexion
+//  (Vue correspondant à la page de connexion ne servira pas car finalement pas de login)
 
 import SwiftUI
 

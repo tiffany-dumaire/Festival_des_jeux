@@ -17,21 +17,6 @@ struct FestivalData:Codable{
 }
 
 /**
-    Structure de données JeuData qui permettra de récupérer un jeu
- */
-struct JeuData:Codable{
-    public var idJeu:Int
-    public var nomJeu:String
-    public var nbJoueurMin:Int
-    public var nbJoueurMax:Int
-    public var ageMin:Int
-    public var duree:Int
-    public var lienNotice:URL
-    public var typeJeu:String
-    public var editeur:String
-}
-
-/**
     Structure de données ZoneData qui permettra de récupérer les zones et la liste des jeux associés
  */
 struct ZoneData:Codable{
@@ -106,47 +91,47 @@ class LoadData {
     }
     
     static func searchJeuxFestival(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
-            let request = URLRequest(url: url)
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let data = data {
-                    let decodedData : Decodable?
-                        decodedData = try? JSONDecoder().decode([JeuData].self, from: data)
-                    guard let decodedResponse = decodedData else {
-                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
-                        return
-                    }
-                    var jeuxFestival : [JeuData]
-                        jeuxFestival = (decodedResponse as! [JeuData])
-                    guard let jeux = self.loadJeuxFestival(data: jeuxFestival) else{
-                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
-                        return
-                    }
-                    DispatchQueue.main.async {
-                        endofrequest(.success(jeux))
-                    }
+        let request = URLRequest(url: url)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let decodedData : Decodable?
+                    decodedData = try? JSONDecoder().decode([JeuData].self, from: data)
+                guard let decodedResponse = decodedData else {
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
                 }
-                else{
-                    DispatchQueue.main.async {
-                        if let error = error {
-                            guard let error = error as? URLError else {
-                                endofrequest(.failure(.unknown))
-                                return
-                            }
-                            endofrequest(.failure(.failingURL(error)))
-                        }
-                        else{
-                            guard let response = response as? HTTPURLResponse else{
-                                endofrequest(.failure(.unknown))
-                                return
-                            }
-                            guard response.statusCode == 200 else {
-                                endofrequest(.failure(.requestFailed))
-                                return
-                            }
+                var jeuxFestival : [JeuData]
+                jeuxFestival = (decodedResponse as! [JeuData])
+                guard let jeux = self.loadJeuxFestival(data: jeuxFestival) else{
+                    DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                    return
+                }
+                DispatchQueue.main.async {
+                    endofrequest(.success(jeux))
+                }
+            }
+            else{
+                DispatchQueue.main.async {
+                    if let error = error {
+                        guard let error = error as? URLError else {
                             endofrequest(.failure(.unknown))
+                            return
                         }
+                        endofrequest(.failure(.failingURL(error)))
+                    }
+                    else{
+                        guard let response = response as? HTTPURLResponse else{
+                            endofrequest(.failure(.unknown))
+                            return
+                        }
+                        guard response.statusCode == 200 else {
+                            endofrequest(.failure(.requestFailed))
+                            return
+                        }
+                        endofrequest(.failure(.unknown))
                     }
                 }
-            }.resume()
-        }
+            }
+        }.resume()
+    }
 }

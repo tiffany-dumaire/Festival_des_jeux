@@ -15,9 +15,9 @@ protocol ListeJeuxFestivalDelegate {
 }
 
 
-class ListJeux : ObservableObject{
+class ListeJeuxFestival : ObservableObject{
         
-    var delegate : ListJeuxDelegate?
+    var delegate : ListeJeuxFestivalDelegate?
     
     private(set) var jeuxFestival = [Jeu]()
     

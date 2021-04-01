@@ -31,7 +31,7 @@ class ListeJeuxZoneVM : ObservableObject {
     private(set) var model : ListeJeuxZone
     @Published private(set) var zones = [ZoneVM]()
     @Published var state : ListeJeuxZoneState = .ready {
-        didSter{
+        didSet{
             #if DEBUG
             debugPrint("Problème listeJeuZoneVM : state.didSet = \(state)")
             #endif

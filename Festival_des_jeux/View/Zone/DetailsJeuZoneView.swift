@@ -1,5 +1,5 @@
 //
-//  ListeJeuxZone.swift
+//  DetailsJeuZone.swift
 //  Festival_des_jeux
 //
 //  Created by Tiffany D on 3/21/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListeJeuxZone: View {
+struct DetailsJeuZoneView: View {
     var body: some View {
         NavigationView{
             ZStack{
@@ -21,7 +21,7 @@ struct ListeJeuxZone: View {
                     Spacer()
                 }
             }.background(
-                Image("new")
+                Image("backgroundDetails")
                     .resizable()
                     .scaledToFill()
                     .clipped()
@@ -31,8 +31,8 @@ struct ListeJeuxZone: View {
     }
 }
 
-struct ListeJeuxZone_Previews: PreviewProvider {
+struct DetailsJeuZone_Previews: PreviewProvider {
     static var previews: some View {
-        ListeJeuxZone()
+        DetailsJeuZoneView()
     }
 }

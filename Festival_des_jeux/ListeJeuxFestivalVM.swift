@@ -29,38 +29,31 @@ enum SearchJeuxState : CustomStringConvertible{
 
 class ListeJeuxFestivalVM : ObservableObject {
     
-    private(set) var model: ListeJeux
+    private(set) var model: ListeJeuxFestival
     
     @Published private var jeux:[JeuVM]
     
     @Published var formViewOpen = false
     
-    @Published var jeuxState : SearchJeuxState = .ready{
+    @Published var state : SearchJeuxState = .ready{
         didSet{
             #if DEBUG
-            debugPrint("SearchPlvm : state.didSet = \(jeuxState)")
+            debugPrint("ListeJeuxFestivalVM : state.didSet = \(state)")
             #endif
-            switch self.jeuxState { // state has changed
+            switch self.state { // state has changed
             case let .loaded(data):    // new data has been loaded, to change all games of list
-                self.formViewOpen = false // close searchFormView, new games have been found
-                #if DEBUG
-                debugPrint("SearchJFVM: jeux loaded => formViewOpen=\(formViewOpen) -> model.new(jeux:)")
-                #endif
-                self.jeux = data
+                self.model.new(jeux:data)
             case .loadingError:
-                self.formViewOpen = true // reopen or keep open searchFormView as there is an error on loading new games
+                print("Error")
             default:                   // nothing to do for ViewModel, perhaps for the view
                 return
             }
         }
     }
     
-    init(){
-        self.jeux=[]
-    }
-    
-    init(_ jeux:[Jeu]){
-        self.jeux = jeux
+    init(_ jeux: ListeJeuxFestival){
+        self.model = jeux
+        self.model.delegate = self
     }
     
     func listeJeux() -> [AnyView]{
@@ -69,7 +62,15 @@ class ListeJeuxFestivalVM : ObservableObject {
             for j in self.jeux{
                 let cur = AnyView(
                 NavigationView{
-                    Text(j.nomJeu)
+                    VStack{
+                        Text("Nom du jeu : \(j.nomJeu)")
+                        Text("Nombre de joueur allant de \(j.nbJoueurMin) à \(j.nbJoueurMax)")
+                        Text("Age minimum requis : \(j.ageMin)")
+                        Text("Durée du jeu : \(j.duree)h")
+                        Text("Lien vers la notive :\(j.lienNotice)")
+                        
+                    }
+                    
                     Spacer()
                 })
                 res.append(cur)

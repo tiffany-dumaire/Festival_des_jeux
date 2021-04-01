@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ListeJeuxZoneIntent {
     @ObservedObject var jeuxZone : ListeJeuxZoneVM

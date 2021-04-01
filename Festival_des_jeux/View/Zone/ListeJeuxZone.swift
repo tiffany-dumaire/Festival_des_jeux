@@ -2,7 +2,7 @@
 //  ListeJeuxZone.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Tiffany D on 3/21/21.
 //
 
 import SwiftUI

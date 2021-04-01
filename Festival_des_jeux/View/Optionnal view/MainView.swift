@@ -1,8 +1,9 @@
 //
 //  MainView.swift
 //  Festival_des_jeux
+//  (Ne sera pas utilisé car finalement pas de login)
 //
-//  Created by user188898 on 3/24/21.
+//  Created by Tiffany D on 3/24/21.
 //
 
 import SwiftUI

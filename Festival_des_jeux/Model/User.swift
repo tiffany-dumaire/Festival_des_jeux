@@ -1,8 +1,9 @@
 //
 //  User.swift
 //  Festival_des_jeux
+//  (Au final ne sera pas utile car pas de login)
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Tiffany D on 3/21/21.
 //
 
 import Foundation
@@ -16,10 +17,11 @@ class User: Identifiable,Codable {
     
     /**
         Constructeur de la class user
-        id : identifiant
-        mail : adresse mail de l'utilisateur
-        password : mot de passe
-        admin : True si c'est un grand manitou, False si c'est un organisateur
+        - Parameters:
+            - id : identifiant
+            - mail : adresse mail de l'utilisateur
+            - password : mot de passe
+            - admin : True si c'est un grand manitou, False si c'est un organisateur
      */
     init(id: Int, mail:String, password:String, admin: Bool){
         self._id = id
@@ -31,8 +33,9 @@ class User: Identifiable,Codable {
     
     /**
         Connexion de l'utilisateur à partir de ses identifiants
-        mail : son adresse mail
-        password : son mot de passe
+        - Parameters:
+            - mail : son adresse mail
+            - password : son mot de passe
      */
     static func connexionUser(mail : String, password : String){
          
@@ -40,9 +43,10 @@ class User: Identifiable,Codable {
     
     /**
         Crée un nouvel utilisateur dans la base de données
-        mail : adresse email de l'utilisateur
-        password : mot de passe de l'utilisateur
-        admin :  true = compte grand manitou, false = compte organisateur
+        - Parameters:
+            - mail : adresse email de l'utilisateur
+            - password : mot de passe de l'utilisateur
+            - admin :  true = compte grand manitou, false = compte organisateur
      */
     static func signUpUser(mail: String,password : String, admin : Bool){
         

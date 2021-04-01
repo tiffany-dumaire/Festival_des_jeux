@@ -37,15 +37,15 @@ class JeuVM : Identifiable {
         return model.duree
     }
     
-    var lienNotice:URL{
+    var lienNotice:String{
         return model.lienNotice
     }
     
-    var typeJeu:TypeJeu{
+    var typeJeu:String{
         return model.typeJeu
     }
     
-    var editeur:Editeur{
+    var editeur:String{
         return model.editeur
     }
     

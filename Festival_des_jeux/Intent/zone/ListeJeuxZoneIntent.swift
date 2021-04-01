@@ -2,7 +2,7 @@
 //  ListeJeuxZoneIntent.swift
 //  Festival_des_jeux
 //
-//  Created by Tiffany D on 3/31/21.
+//  Created by Tiffany D & Aaron L on 3/31/21.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import SwiftUI
 /**
     Structure de données ZoneData qui permettra de récupérer les zones et la liste des jeux associés
  */
-struct ZoneData:Codable{
+struct ZoneData: Codable{
     public var idZone:Int
     public var nomZone:String
 }

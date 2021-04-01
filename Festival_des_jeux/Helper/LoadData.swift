@@ -2,7 +2,7 @@
 //  LoadData.swift
 //  Festival_des_jeux
 //
-//  Created by Tiffany D on 3/31/21.
+//  Created by Tiffany D on 3/27/21.
 //
 
 import Foundation
@@ -50,12 +50,16 @@ struct EditeurData:Codable{
     
 }
 
+
 class LoadData {
     var resultFestival:[Festival]
     var resultsJeu: [Jeu] = []
     var resultsEditeurs: [Editeur] = []
     var resultsZone: [Zone] = []
     
+    /**
+        Initialisation de LoadData
+     */
     init(){
         self.resultFestival = []
         self.resultsJeu = []
@@ -63,6 +67,11 @@ class LoadData {
         self.resultsZone = []
     }
     
+    /**
+        Récupération des données de jeux
+            - Parameters:
+                - data: tableau de JeuData
+     */
     static func jeuDetailsData(data: [JeuData]) -> [Jeu]? {
         var jeuxFestival = [Jeu]()
         for d in data {
@@ -72,12 +81,72 @@ class LoadData {
         return jeuxFestival
     }
     
-    static func jeuEditeurDetailsData(data:[EditeurData]) -> [Editeur]? {
-        var jeuEditeurs = [Editeur]()
-        for d in data {
-            
-        }
-        return jeuEditeurs
+    static func loadJeuxFestival(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
+        self.searchJeuxFestival(url:url, endofrequest:endofrequest)
     }
     
+    /**
+        Récupération des données de jeux par éditeur
+            - Parameters:
+                - data: tableau de EditeurData
+     */
+    static func jeuEditeurDetailsData(data:[EditeurData]) -> [Editeur]? {
+        //var jeuEditeurs = [Editeur]()
+        //for d in data {
+            
+        //}
+       // return jeuEditeurs
+    }
+    
+    static func jeuZoneDetailsData(data:[ZoneData]) -> [Zone]? {
+        //var zones = [Zone]()
+        //for d in data {
+            
+        //}
+    }
+    
+    static func searchJeuxFestival(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let data = data {
+                    let decodedData : Decodable?
+                        decodedData = try? JSONDecoder().decode([JeuData].self, from: data)
+                    guard let decodedResponse = decodedData else {
+                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                        return
+                    }
+                    var jeuxFestival : [JeuData]
+                        jeuxFestival = (decodedResponse as! [JeuData])
+                    guard let jeux = self.loadJeuxFestival(data: jeuxFestival) else{
+                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        endofrequest(.success(jeux))
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            guard let error = error as? URLError else {
+                                endofrequest(.failure(.unknown))
+                                return
+                            }
+                            endofrequest(.failure(.failingURL(error)))
+                        }
+                        else{
+                            guard let response = response as? HTTPURLResponse else{
+                                endofrequest(.failure(.unknown))
+                                return
+                            }
+                            guard response.statusCode == 200 else {
+                                endofrequest(.failure(.requestFailed))
+                                return
+                            }
+                            endofrequest(.failure(.unknown))
+                        }
+                    }
+                }
+            }.resume()
+        }
 }

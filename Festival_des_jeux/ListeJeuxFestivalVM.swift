@@ -9,26 +9,29 @@ import Foundation
 import SwiftUI
 import Combine
 
-class ListeJeuxFestivalVM : ObservableObject {
-    
-    enum SearchJeuxState : CustomStringConvertible{
-        case ready
-        case loading(String)
-        case loaded([Jeu])
-        case loadingError(Error)
+enum SearchJeuxState : CustomStringConvertible{
+    case ready
+    case loading(String)
+    case loaded([Jeu])
+    case loadingError(Error)
 
-        var description: String{
-            switch self {
-            case .ready                               : return "ready"
-            case .loading(let s)                      : return "loading: \(s)"
-            case .loaded(let jeux)                  : return "loaded: \(jeux.count) jeux"
-            case .loadingError(let error)             : return "loadingError: Error loading -> \(error)"
-            }
+    var description: String{
+        switch self {
+        case .ready                               : return "ready"
+        case .loading(let s)                      : return "loading: \(s)"
+        case .loaded(let jeux)                    : return "loaded: \(jeux.count) jeux"
+        case .loadingError(let error)             : return "loadingError: Error loading -> \(error)"
         }
-        
     }
     
-    @Published private var jeux:[Jeu]
+}
+
+
+class ListeJeuxFestivalVM : ObservableObject {
+    
+    private(set) var model: ListeJeux
+    
+    @Published private var jeux:[JeuVM]
     
     @Published var formViewOpen = false
     

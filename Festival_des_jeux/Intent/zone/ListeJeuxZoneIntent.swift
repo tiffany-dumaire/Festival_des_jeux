@@ -15,9 +15,12 @@ class ListeJeuxZoneIntent {
     }
     
     func listeJeuxBack(){
-        var url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyzone"
+        //var url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyzone"
         
     }
     
+    func loaded(listeZones:[Zone]){
+        //self.jeuxZone = .ready
+    }
     
 }

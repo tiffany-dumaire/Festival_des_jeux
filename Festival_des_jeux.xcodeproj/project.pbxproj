@@ -15,6 +15,11 @@
 		571D84482609EC1600EBA2A1 /* DetailsJeuEditeurVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571D84472609EC1600EBA2A1 /* DetailsJeuEditeurVM.swift */; };
 		571D844B2609EC3000EBA2A1 /* ListeJeuxFestivalVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571D844A2609EC3000EBA2A1 /* ListeJeuxFestivalVM.swift */; };
 		571D844E2609EC3F00EBA2A1 /* DetailsJeuFestivalVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571D844D2609EC3F00EBA2A1 /* DetailsJeuFestivalVM.swift */; };
+		575581C926159EFE00A2EC47 /* ZoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581C826159EFE00A2EC47 /* ZoneVM.swift */; };
+		575581CC2615B0C600A2EC47 /* FestivalVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581CB2615B0C600A2EC47 /* FestivalVM.swift */; };
+		575581CF2615B57E00A2EC47 /* ListeJeuxZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581CE2615B57E00A2EC47 /* ListeJeuxZone.swift */; };
+		575581D22615C3AE00A2EC47 /* ListeJeuxFestival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581D12615C3AE00A2EC47 /* ListeJeuxFestival.swift */; };
+		575581D52615C64200A2EC47 /* ListeJeuxEditeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581D42615C64200A2EC47 /* ListeJeuxEditeur.swift */; };
 		5774D8CC2607DA4400954FE2 /* ListeJeuxFestival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8CB2607DA4400954FE2 /* ListeJeuxFestival.swift */; };
 		5774D8CF2607DA6100954FE2 /* ListeJeuxEditeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8CE2607DA6100954FE2 /* ListeJeuxEditeur.swift */; };
 		5774D8D22607DA7400954FE2 /* ListeJeuxZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774D8D12607DA7400954FE2 /* ListeJeuxZone.swift */; };
@@ -51,6 +56,11 @@
 		571D84472609EC1600EBA2A1 /* DetailsJeuEditeurVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuEditeurVM.swift; sourceTree = "<group>"; };
 		571D844A2609EC3000EBA2A1 /* ListeJeuxFestivalVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestivalVM.swift; sourceTree = "<group>"; };
 		571D844D2609EC3F00EBA2A1 /* DetailsJeuFestivalVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsJeuFestivalVM.swift; sourceTree = "<group>"; };
+		575581C826159EFE00A2EC47 /* ZoneVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneVM.swift; sourceTree = "<group>"; };
+		575581CB2615B0C600A2EC47 /* FestivalVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalVM.swift; sourceTree = "<group>"; };
+		575581CE2615B57E00A2EC47 /* ListeJeuxZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxZone.swift; sourceTree = "<group>"; };
+		575581D12615C3AE00A2EC47 /* ListeJeuxFestival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestival.swift; sourceTree = "<group>"; };
+		575581D42615C64200A2EC47 /* ListeJeuxEditeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxEditeur.swift; sourceTree = "<group>"; };
 		5774D8CB2607DA4400954FE2 /* ListeJeuxFestival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestival.swift; sourceTree = "<group>"; };
 		5774D8CE2607DA6100954FE2 /* ListeJeuxEditeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxEditeur.swift; sourceTree = "<group>"; };
 		5774D8D12607DA7400954FE2 /* ListeJeuxZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxZone.swift; sourceTree = "<group>"; };
@@ -96,6 +106,7 @@
 			children = (
 				571D844A2609EC3000EBA2A1 /* ListeJeuxFestivalVM.swift */,
 				571D844D2609EC3F00EBA2A1 /* DetailsJeuFestivalVM.swift */,
+				575581CB2615B0C600A2EC47 /* FestivalVM.swift */,
 			);
 			name = festival;
 			sourceTree = "<group>";
@@ -115,6 +126,7 @@
 			children = (
 				571D843E2609EBE100EBA2A1 /* ListeJeuxZoneVM.swift */,
 				571D84412609EBF200EBA2A1 /* DetailsJeuZoneVM.swift */,
+				575581C826159EFE00A2EC47 /* ZoneVM.swift */,
 			);
 			name = zone;
 			sourceTree = "<group>";
@@ -256,6 +268,9 @@
 				571D843B2609E99C00EBA2A1 /* Festival.swift */,
 				577500BE2614ABB600D94344 /* Zone.swift */,
 				577500C12614B11200D94344 /* Editeur.swift */,
+				575581CE2615B57E00A2EC47 /* ListeJeuxZone.swift */,
+				575581D12615C3AE00A2EC47 /* ListeJeuxFestival.swift */,
+				575581D42615C64200A2EC47 /* ListeJeuxEditeur.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,8 +404,11 @@
 				571D84452609EC0500EBA2A1 /* ListeJeuxEditeurVM.swift in Sources */,
 				57B2F545260764F400CA9233 /* Festival_des_jeuxApp.swift in Sources */,
 				5774D8CF2607DA6100954FE2 /* ListeJeuxEditeur.swift in Sources */,
+				575581D52615C64200A2EC47 /* ListeJeuxEditeur.swift in Sources */,
 				57B2F5642607746200CA9233 /* SearchBar.swift in Sources */,
 				5774D8DF2607E75700954FE2 /* DetailsJeuFestival.swift in Sources */,
+				575581C926159EFE00A2EC47 /* ZoneVM.swift in Sources */,
+				575581CF2615B57E00A2EC47 /* ListeJeuxZone.swift in Sources */,
 				5774D8DA2607E6BF00954FE2 /* Jeu.swift in Sources */,
 				57D865EF260B7CA9002C422C /* MainView.swift in Sources */,
 				5774D8CC2607DA4400954FE2 /* ListeJeuxFestival.swift in Sources */,
@@ -410,8 +428,10 @@
 				5774D8E32607E78100954FE2 /* DetailsJeuEditeur.swift in Sources */,
 				571D84482609EC1600EBA2A1 /* DetailsJeuEditeurVM.swift in Sources */,
 				5774D8E62607E79100954FE2 /* DetailsJeuZone.swift in Sources */,
+				575581D22615C3AE00A2EC47 /* ListeJeuxFestival.swift in Sources */,
 				7C2EAA9C261466B6007B7D5C /* SearchJeuxViewIntent.swift in Sources */,
 				571D844B2609EC3000EBA2A1 /* ListeJeuxFestivalVM.swift in Sources */,
+				575581CC2615B0C600A2EC47 /* FestivalVM.swift in Sources */,
 				5774D8D22607DA7400954FE2 /* ListeJeuxZone.swift in Sources */,
 				577500C22614B11200D94344 /* Editeur.swift in Sources */,
 				7C8E21CD260C91C8004DCDE6 /* CarouselView.swift in Sources */,

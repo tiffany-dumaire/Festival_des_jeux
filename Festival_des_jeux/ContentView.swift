@@ -27,7 +27,7 @@ struct ContentView: View {
                     }
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestival(),
+                            destination: ListeJeuxFestivalView(),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()
@@ -39,7 +39,7 @@ struct ContentView: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxZone(),
+                            destination: ListeJeuxZoneView(),
                             label: {
                                 Text(" Liste des jeux par Zone ")
                                     .bold()
@@ -52,7 +52,7 @@ struct ContentView: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxEditeur(),
+                            destination: ListeJeuxEditeurView(),
                             label: {
                                 Text("Liste des jeux par Editeur")
                                     .bold()

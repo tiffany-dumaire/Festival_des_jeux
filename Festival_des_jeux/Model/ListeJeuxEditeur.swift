@@ -55,7 +55,7 @@ class ListeJeuxEditeur: ObservableObject {
         Suppression de toutes les zones de la liste
      */
     func removeAll(){
-        self.zones.removeAll()
+        self.editeurs.removeAll()
         self.delegate?.removeAll()
     }
 }

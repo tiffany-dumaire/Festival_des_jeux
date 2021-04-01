@@ -2,7 +2,7 @@
 //  FestivalInformationsMenu.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/21/21.
+//  Created by Tiffany D & Aaron L on 3/21/21.
 //
 
 import SwiftUI
@@ -25,7 +25,7 @@ struct FestivalInformationsMenu: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestival(listeJeuxFestival: ListeJeuxFestivalVM()),
+                            destination: ListeJeuxFestival(),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()

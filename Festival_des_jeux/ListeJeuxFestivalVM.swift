@@ -2,7 +2,7 @@
 //  ListeJeuxFestivalVM.swift
 //  Festival_des_jeux
 //
-//  Created by Tiffany D & Aaron L on 3/23/21.
+//  Created by Aaron L on 3/23/21.
 //
 
 import Foundation
@@ -53,7 +53,7 @@ class ListeJeuxFestivalVM : ObservableObject {
     
     init(_ jeux: ListeJeuxFestival){
         self.model = jeux
-        //self.model.delegate = self
+        self.jeux = []
     }
     
     func listeJeux() -> [AnyView]{

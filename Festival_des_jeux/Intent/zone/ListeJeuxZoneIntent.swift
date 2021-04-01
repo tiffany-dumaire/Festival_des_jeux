@@ -18,9 +18,7 @@ class ListeJeuxZoneIntent {
     
     func listeJeuxBack(){
         var url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyzone"
-        self.jeuxZone.state = .loading(url)
-        LoadData.
-        
+        self.jeuxZone.state = .loading(url)        
     }
     
     func loaded(listeZones:[Zone]){

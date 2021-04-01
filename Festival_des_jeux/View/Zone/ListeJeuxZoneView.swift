@@ -36,6 +36,6 @@ struct ListeJeuxZoneView: View {
 
 struct ListeJeuxZone_Previews: PreviewProvider {
     static var previews: some View {
-        ListeJeuxZoneView()
+        ContentView()
     }
 }

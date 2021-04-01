@@ -21,7 +21,7 @@ struct ListeJeuxEditeurView: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: DetailsJeuEditeurView(),
+                            destination: DetailsJeuView(),
                             label: {
                                 Text("Details des jeux")
                                     .bold()

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
-class Jeu: Identifiable,ObservableObject,Codable {
+class Jeu: ObservableObject, Decodable {
     
     private(set) var idJeu: Int
     private(set) var nomJeu: String
@@ -16,8 +17,8 @@ class Jeu: Identifiable,ObservableObject,Codable {
     private(set) var ageMin: Int
     private(set) var duree: Int
     private(set) var lienNotice: URL
-    private(set) var typeJeu: String
-    private(set) var editeur: String
+    private(set) var typeJeu: TypeJeu
+    private(set) var editeur: Editeur
     
     /**
         Constructeur de la class Jeu
@@ -30,9 +31,9 @@ class Jeu: Identifiable,ObservableObject,Codable {
             - duree : Temps qu'il faut en moyenne pour finir le jeu
             - lienNotice : le lien vers les règles du jeu
             - typeJeu : type du jeu donné (jeux pour enfants, etc..)
-            - editeur : nom de l'éditeur du jeu
+            - editeur : l'éditeur du jeu
      */
-    init(id: Int, nomJeu: String, nbJoueurMin: Int, nbJoueurMax: Int, ageMin : Int, duree: Int, lienNotice: URL, typeJeu: String, editeur: String){
+    init(id: Int, nomJeu: String, nbJoueurMin: Int, nbJoueurMax: Int, ageMin : Int, duree: Int, lienNotice: URL, typeJeu: TypeJeu, editeur: Editeur){
         self.idJeu = id
         self.nomJeu = nomJeu
         self.nbJoueurMin = nbJoueurMin

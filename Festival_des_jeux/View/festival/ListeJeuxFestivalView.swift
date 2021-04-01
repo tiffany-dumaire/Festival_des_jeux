@@ -37,8 +37,6 @@ struct ListeJeuxFestivalView: View {
 }
 
 struct ListeJeuxFestival_Previews: PreviewProvider {
-    static var jeux = [Jeu(id: 1, nomJeu: "Jeu1", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 2, nomJeu: "Jeu2", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 3, nomJeu: "Jeu3", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 3, duree: 10, lienNotice: URL(string: "https://www.google.com")!, typeJeu: "Famille", editeur: "Editeur")]
-    //static var liste = ListeJeuxFestivalVM(jeux)
     static var previews: some View {
         ListeJeuxFestivalView()
     }

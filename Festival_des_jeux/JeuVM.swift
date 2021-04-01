@@ -41,11 +41,11 @@ class JeuVM : Identifiable {
         return model.lienNotice
     }
     
-    var typeJeu:String{
+    var typeJeu:TypeJeu{
         return model.typeJeu
     }
     
-    var editeur:String{
+    var editeur:Editeur{
         return model.editeur
     }
     

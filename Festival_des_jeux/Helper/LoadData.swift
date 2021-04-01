@@ -164,8 +164,8 @@ class LoadData {
     static func jeuDetailsData(data: [JeuData]) -> [Jeu]? {
         var jeuxFestival = [Jeu]()
         for d in data {
-            let f = Jeu(id: d.idJeu, nomJeu: d.nomJeu, nbJoueurMin: d.nbJoueurMin, nbJoueurMax: d.nbJoueurMax, ageMin: d.ageMin, duree: d.duree, lienNotice: d.lienNotice, typeJeu: d.typeJeu, editeur: d.editeur)
-            jeuxFestival.append(f)
+           // let f = Jeu(id: d.idJeu, nomJeu: d.nomJeu, nbJoueurMin: d.nbJoueurMin, nbJoueurMax: d.nbJoueurMax, ageMin: d.ageMin, duree: d.duree, lienNotice: d.lienNotice, typeJeu: d.typeJeu, editeur: d.editeur)
+            //jeuxFestival.append(f)
         }
         return jeuxFestival
     }

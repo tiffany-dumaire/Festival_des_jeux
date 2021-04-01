@@ -2,7 +2,7 @@
 //  ListeJeuxEditeurIntent.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 4/1/21.
+//  Created by Tiffany D & Aaron L on 4/1/21.
 //
 
 import Foundation

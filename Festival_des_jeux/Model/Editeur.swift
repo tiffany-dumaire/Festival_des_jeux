@@ -7,11 +7,10 @@
 
 import Foundation
 
-class Editeur: Identifiable, ObservableObject, Encodable{
+class Editeur: ObservableObject, Decodable{
     
     private(set) var idEditeur:Int
     private(set) var nomEditeur:String
-    private(set) var jeuxReserves:[Jeu]
     
     /**
         Constructeur de la class Editeur
@@ -20,9 +19,8 @@ class Editeur: Identifiable, ObservableObject, Encodable{
             - nomEditeur : nom de l'éditeur
             - jeuxReserves : jeux correspondant à l'éditeur
      */
-    init(idEditeur:Int,nomEditeur:String,jeuxReserves:[Jeu]){
+    init(idEditeur:Int,nomEditeur:String){
         self.idEditeur = idEditeur
         self.nomEditeur = nomEditeur
-        self.jeuxReserves = jeuxReserves
     }
 }

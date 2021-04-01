@@ -2,7 +2,7 @@
 //  EditeurVM.swift
 //  Festival_des_jeux
 //
-//  Created by user188898 on 3/23/21.
+//  Created by Tiffany D & Aaron L on 3/23/21.
 //
 
 import Foundation
@@ -18,10 +18,6 @@ class EditeurVM: Identifiable{
     
     var nomEditeur:String{
         return model.nomEditeur
-    }
-    
-    var jeuxReserves:[Jeu]{
-        return model.jeuxReserves
     }
     
     /**

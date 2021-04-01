@@ -48,6 +48,8 @@
 		7C2EAA9C261466B6007B7D5C /* SearchJeuxViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EAA9B261466B6007B7D5C /* SearchJeuxViewIntent.swift */; };
 		7C2EAAA126147067007B7D5C /* InOutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EAAA026147067007B7D5C /* InOutHelper.swift */; };
 		7C8E21CD260C91C8004DCDE6 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */; };
+		7CE7D8EC2616825D007528FA /* ListeJeuxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7D8EB2616825D007528FA /* ListeJeuxView.swift */; };
+		7CE7D8EF2616828A007528FA /* JeuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7D8EE2616828A007528FA /* JeuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		7C2EAA9B261466B6007B7D5C /* SearchJeuxViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchJeuxViewIntent.swift; path = Festival_des_jeux/SearchJeuxViewIntent.swift; sourceTree = SOURCE_ROOT; };
 		7C2EAAA026147067007B7D5C /* InOutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutHelper.swift; sourceTree = "<group>"; };
 		7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		7CE7D8EB2616825D007528FA /* ListeJeuxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxView.swift; sourceTree = "<group>"; };
+		7CE7D8EE2616828A007528FA /* JeuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				5755820926165ED100A2EC47 /* DetailsJeuView.swift */,
+				7CE7D8EB2616825D007528FA /* ListeJeuxView.swift */,
+				7CE7D8EE2616828A007528FA /* JeuView.swift */,
 			);
 			path = Jeu;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 				57D865EF260B7CA9002C422C /* MainView.swift in Sources */,
 				5774D8CC2607DA4400954FE2 /* ListeJeuxFestivalView.swift in Sources */,
 				57B2F55E26076FDF00CA9233 /* LoginView.swift in Sources */,
+				7CE7D8EC2616825D007528FA /* ListeJeuxView.swift in Sources */,
 				571D843C2609E99C00EBA2A1 /* Festival.swift in Sources */,
 				577500D226151DC300D94344 /* ListeJeuxZoneIntent.swift in Sources */,
 				571D84422609EBF200EBA2A1 /* DetailsJeuZoneVM.swift in Sources */,
@@ -442,6 +449,7 @@
 				571D844E2609EC3F00EBA2A1 /* DetailsJeuFestivalVM.swift in Sources */,
 				575581F0261654CB00A2EC47 /* ListeEditeurView.swift in Sources */,
 				577500CC26151A3A00D94344 /* EditeurVM.swift in Sources */,
+				7CE7D8EF2616828A007528FA /* JeuView.swift in Sources */,
 				577500C9261518C800D94344 /* JeuVM.swift in Sources */,
 				7C2EAAA126147067007B7D5C /* InOutHelper.swift in Sources */,
 				575581E42616254400A2EC47 /* FestivalIntent.swift in Sources */,

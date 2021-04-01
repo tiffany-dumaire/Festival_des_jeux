@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-        
+    @StateObject var listeZones : ListeJeuxZoneVM   = ListeJeuxZoneVM(listeJeuxZone: ListeJeuxZone())
     var body: some View {
         NavigationView{
             ZStack{
@@ -37,16 +37,16 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                     Spacer()
-                    HStack{/*
+                    HStack{
                         NavigationLink(
-                            destination: ListeJeuxZoneView(),
+                            destination: ListeJeuxZoneView(listeZoneVM: listeZones),
                             label: {
                                 Text(" Liste des jeux par Zone ")
                                     .bold()
                             }).padding()
                             .background(Color.blue)
                             .cornerRadius(30)
-                            .foregroundColor(.white)*/
+                            .foregroundColor(.white)
                         
                     }
                     Spacer()

@@ -21,6 +21,10 @@ class ZoneVM : Identifiable{
         return model.nomZone
     }
     
+    var jeuxReserve : [Jeu]{
+            return model.jeuxReserve
+        }
+    
     /**
         Initialisation de la classe ZoneVM
         - Parameters :

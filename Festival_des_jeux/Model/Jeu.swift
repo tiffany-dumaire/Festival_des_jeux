@@ -16,9 +16,9 @@ class Jeu: ObservableObject, Decodable {
     private(set) var nbJoueurMax: Int
     private(set) var ageMin: Int
     private(set) var duree: Int
-    private(set) var lienNotice: URL
-    private(set) var typeJeu: TypeJeu
-    private(set) var editeur: Editeur
+    private(set) var lienNotice: String
+    private(set) var typeJeu: String
+    private(set) var editeur: String
     
     /**
         Constructeur de la class Jeu
@@ -33,7 +33,7 @@ class Jeu: ObservableObject, Decodable {
             - typeJeu : type du jeu donné (jeux pour enfants, etc..)
             - editeur : l'éditeur du jeu
      */
-    init(id: Int, nomJeu: String, nbJoueurMin: Int, nbJoueurMax: Int, ageMin : Int, duree: Int, lienNotice: URL, typeJeu: TypeJeu, editeur: Editeur){
+    init(id: Int, nomJeu: String, nbJoueurMin: Int, nbJoueurMax: Int, ageMin : Int, duree: Int, lienNotice: String, typeJeu: String, editeur: String){
         self.idJeu = id
         self.nomJeu = nomJeu
         self.nbJoueurMin = nbJoueurMin

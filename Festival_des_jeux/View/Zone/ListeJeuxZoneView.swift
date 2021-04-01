@@ -11,6 +11,31 @@ struct ListeJeuxZoneView: View {
     
     @ObservedObject var listeZoneVM : ListeJeuxZoneVM
     var intent : ListeJeuxZoneIntent
+    var liste : ListeJeuxFestival
+    
+    init(listeZoneVM: ListeJeuxZoneVM){
+            self.listeZoneVM = listeZoneVM
+        liste = ListeJeuxFestival()
+            self.intent = ListeJeuxZoneIntent(jeuxZone: listeZoneVM)
+        if case .ready = self.listeZoneVM.state {
+            self.intent.listeJeuxBack()
+    }
+    }
+        
+    private var searchState : ListeJeuxZoneState{
+            return self.listeZoneVM.state
+    }
+            
+    private var zones : [ZoneVM] {
+            return self.listeZoneVM.zones
+    }
+            
+            
+            
+    @State private var text: String = ""
+
+    @State private var isEditing = false
+        
     var body: some View {
         NavigationView{
             ZStack{

@@ -18,7 +18,7 @@ struct JeuData:Codable{
     public var nbJoueurMax:Int
     public var ageMin:Int
     public var duree:Int
-    public var lienNotice:URL
+    public var lienNotice:String
     public var typeJeu:String
     public var editeur:String
 }

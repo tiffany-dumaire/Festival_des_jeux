@@ -44,15 +44,6 @@ struct FestivalData:Codable{
 }
 
 /**
-    Structure de données ZoneData qui permettra de récupérer les zones et la liste des jeux associés
- */
-struct ZoneData:Codable{
-    public var idZone:Int
-    public var nomZone:String
-    public var jeuxReserves:[JeuData]
-}
-
-/**
     Structure de données EditeurData qui permettra de récupérer les éditeurs et la liste des jeux associés
  */
 struct EditeurData:Codable{
@@ -63,6 +54,11 @@ struct EditeurData:Codable{
 }
 
 struct JeuxData : Codable {
+    public var jeux: [JeuData]
+}
+
+struct ZonesData: Codable {
+    public var zone: ZoneData
     public var jeux: [JeuData]
 }
 
@@ -194,6 +190,36 @@ class LoadData {
         return zones
     }
     
+    static func jeuDataOfJeu(data: [JeuData]) -> [Jeu]?{
+            var jeux = [Jeu]()
+            for d in data{
+                
+                let jeu = Jeu(id: d.idJeu, nomJeu: d.nomJeu, nbJoueurMin: d.nbJoueurMin, nbJoueurMax: d.nbJoueurMax, ageMin: d.ageMin, duree: d.duree, lienNotice: d.lienNotice, typeJeu: d.typeJeu, editeur: d.editeur)
+                jeux.append(jeu)
+            }
+            return jeux
+        }
+    
+    static func zonesDataOfZones(data: [ZonesData]) -> [Zone]?{
+            var zones = [Zone]()
+            for d in data{
+                let zone = Zone(idZone: d.zone.idZone, nomZone: d.zone.nomZone, jeuxReserve: jeuDataOfJeu(data: d.jeux) ?? [Jeu(id: 0, nomJeu: "", nbJoueurMin: 0, nbJoueurMax: 0, ageMin: 0, duree: 0, lienNotice: "", typeJeu: "", editeur: "")])
+                zones.append(zone)
+            }
+            return zones
+        }
+    
+    static func loadZones(url surl: String, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
+            guard let url = URL(string: surl) else {
+                endofrequest(.failure(.badURL(surl)))
+                return
+            }
+            self.loadZones(url: url, endofrequest: endofrequest)
+        }
+    static func loadZones(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
+            self.searchZonesFestival(url: url, endofrequest: endofrequest)
+        }
+    
     static func searchJeuxFestival(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -238,4 +264,56 @@ class LoadData {
             }
         }.resume()
     }
+    static func searchZonesFestival(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let data = data {
+                    let decodedData : Decodable?
+                    
+                    
+                        decodedData = try? JSONDecoder().decode([ZonesData].self, from: data)
+                    
+                    guard let decodedResponse = decodedData else {
+                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                        return
+                    }
+                    
+                    var zonesData : [ZonesData]
+                    
+                    zonesData = (decodedResponse as! [ZonesData])
+                    
+                    
+                    
+                    guard let zones = self.zonesDataOfZones(data: zonesData) else{
+                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        endofrequest(.success(zones))
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            guard let error = error as? URLError else {
+                                endofrequest(.failure(.unknown))
+                                return
+                            }
+                            endofrequest(.failure(.failingURL(error)))
+                        }
+                        else{
+                            guard let response = response as? HTTPURLResponse else{
+                                endofrequest(.failure(.unknown))
+                                return
+                            }
+                            guard response.statusCode == 200 else {
+                                endofrequest(.failure(.requestFailed))
+                                return
+                            }
+                            endofrequest(.failure(.unknown))
+                        }
+                    }
+                }
+            }.resume()
+        }
 }

@@ -11,6 +11,21 @@ struct ListeJeuxZoneView: View {
     
     @ObservedObject var listeZoneVM : ListeJeuxZoneVM
     var intent : ListeJeuxZoneIntent
+    private(set) var jeu : JeuVM
+    
+    private var url : String
+    
+    init(jeu:JeuVM, zones:ListeJeuxZoneVM){
+        self.jeu = jeu
+        self.listeZoneVM = zones
+        self.url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyzone"
+        self.intent = ListeJeuxZoneIntent(jeuxZone: listeZoneVM)
+        endInit()
+    }
+    func endInit(){
+        self.intent.loadZones(url:url)
+    }
+    
     var body: some View {
         NavigationView{
             ZStack{

@@ -18,7 +18,6 @@ class ListeJeuxEditeurIntent {
     
     func loadEditors(url: String){
         self.editeurs.state = .loading(url)
-        HttpRequest.loadItemsFromAPI(url: url, endofrequest: httpJsonLoaded)
     }
     
     func httpJsonLoaded(result: Result<[Editeur], HttpRequestError>){

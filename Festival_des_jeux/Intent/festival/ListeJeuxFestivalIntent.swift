@@ -32,7 +32,7 @@ class ListeJeuxFestivalIntent {
     
     func loadJeux(url:String){
         self.listeJeuxFestival.state = .loading(url)
-        InOutHelper.httpGetJsonData(from: url, endofrequest: httpJsonLoaded)
+        //InOutHelper.httpGetJsonData(from: url, endofrequest: httpJsonLoaded)
         
     }
     

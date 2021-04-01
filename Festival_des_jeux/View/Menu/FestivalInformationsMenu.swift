@@ -36,16 +36,16 @@ struct FestivalInformationsMenu: View {
                     }
                     Spacer()
                     HStack{
-                        NavigationLink(
+                      /*NavigationLink(
                             destination: ListeJeuxZoneView(),
                             label: {
-                                Text(" Liste des jeux par Zone ")
-                                    .bold()
+                               Text(" Liste des jeux par Zone ")
+                                   .bold()
                             }).padding()
                             .background(Color.blue)
-                            .cornerRadius(30)
+                          .cornerRadius(30)
                             .foregroundColor(.white)
-                        
+                        */
                     }
                     Spacer()
                     HStack{

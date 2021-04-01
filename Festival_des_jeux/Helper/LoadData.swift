@@ -37,7 +37,7 @@ import Foundation
 /**
     Structure de données Festival Data qui permettra de récupérer les festivals (id,nom,annee) pour l'affichage de la Start View (ContentView.swift)
  */
-struct FestivalData:Codable{
+struct FestivalData: Codable{
     public var idFestival:Int
     public var nomFestival:String
     public var annee:Int
@@ -46,7 +46,7 @@ struct FestivalData:Codable{
 /**
     Structure de données EditeurData qui permettra de récupérer les éditeurs et la liste des jeux associés
  */
-struct EditeurData:Codable{
+struct EditeurData: Codable{
     public var idSociete:Int
     public var nomSociete:String
     public var jeuxReserves:[JeuData]

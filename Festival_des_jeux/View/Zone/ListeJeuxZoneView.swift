@@ -51,12 +51,7 @@ struct ListeJeuxZoneView: View {
         return NavigationView{
                    VStack{
                        HStack {
-                           Button(action: {
-                                   self.intent.listeJeuxBack()}){
-                               Label("", systemImage: "arrow.clockwise")
-                                   .padding(15)
-                           }
-                           TextField("Rechercher ...", text: $text)
+                           TextField("Search", text: $text)
                                .padding(7)
                                .padding(.horizontal, 25)
                                .background(Color(.systemGray6))
@@ -72,7 +67,7 @@ struct ListeJeuxZoneView: View {
                                    self.text = ""
 
                                }) {
-                                   Text("Annuler")
+                                   Text("Cancel")
                                }
                                .padding(.trailing, 10)
                                .transition(.move(edge: .trailing))
@@ -94,11 +89,10 @@ struct ListeJeuxZoneView: View {
                    if zones.count == 0{
                        VStack{
                            Spacer()
-                           Text("Aucune zone disponible")
+                           Text("Pas de zone disponible")
                            Spacer()
                        }
                    }
-                   ErrorViewZone(state: searchState)
                }
                    }
                
@@ -108,43 +102,10 @@ struct ListeJeuxZoneView: View {
            }
 }
 
-struct ZoneRow : View{
-    let zone : ZoneVM
-    var body: some View{
-        HStack{
-            VStack(alignment: .leading){
-                Text("\(zone.nomZone)")
-                    .font(.headline)
-            }
-        }
-    }
-}
-
-struct ErrorViewZone : View{
-    let state : ListeJeuxZoneState
-    var body: some View{
-        VStack{
-            Spacer()
-            switch state{
-            case .loading, .loaded:
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                    .scaleEffect(3)
-            case .loadingError(let error):
-                Text("Error!")
-            default:
-                EmptyView()
-            }
-            if case let .loaded(data) = state{
-                Text("\(data.count) zones trouvées!")
-            }
-            Spacer()
-        }
-    }
 
 struct ListeJeuxZone_Previews: PreviewProvider {
     static var previews: some View {
         ListeJeuxZoneView(listeZoneVM: ListeJeuxZoneVM(listeJeuxZone: ListeJeuxZone()))
     }
 }
-}
+

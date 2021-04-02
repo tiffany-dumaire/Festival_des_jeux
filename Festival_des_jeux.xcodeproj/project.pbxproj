@@ -18,7 +18,6 @@
 		575581C926159EFE00A2EC47 /* ZoneVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581C826159EFE00A2EC47 /* ZoneVM.swift */; };
 		575581CC2615B0C600A2EC47 /* FestivalVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581CB2615B0C600A2EC47 /* FestivalVM.swift */; };
 		575581DB2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581DA2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift */; };
-		575581E42616254400A2EC47 /* FestivalIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581E32616254400A2EC47 /* FestivalIntent.swift */; };
 		575581E82616497100A2EC47 /* ListeJeuxEditeurIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581E72616497100A2EC47 /* ListeJeuxEditeurIntent.swift */; };
 		575581F0261654CB00A2EC47 /* ListeEditeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581EF261654CB00A2EC47 /* ListeEditeurView.swift */; };
 		575581F326165C0200A2EC47 /* TypeJeu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575581F226165C0200A2EC47 /* TypeJeu.swift */; };
@@ -47,6 +46,7 @@
 		57B2F55E26076FDF00CA9233 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B2F55D26076FDF00CA9233 /* LoginView.swift */; };
 		57B2F5642607746200CA9233 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B2F5632607746200CA9233 /* SearchBar.swift */; };
 		57D865EF260B7CA9002C422C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D865EE260B7CA9002C422C /* MainView.swift */; };
+		7C2AFC242616AE6C008D93A4 /* EditeurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2AFC232616AE6C008D93A4 /* EditeurView.swift */; };
 		7C2EAA9C261466B6007B7D5C /* SearchJeuxViewIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EAA9B261466B6007B7D5C /* SearchJeuxViewIntent.swift */; };
 		7C2EAAA126147067007B7D5C /* InOutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2EAAA026147067007B7D5C /* InOutHelper.swift */; };
 		7C8E21CD260C91C8004DCDE6 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */; };
@@ -66,7 +66,6 @@
 		575581C826159EFE00A2EC47 /* ZoneVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneVM.swift; sourceTree = "<group>"; };
 		575581CB2615B0C600A2EC47 /* FestivalVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalVM.swift; sourceTree = "<group>"; };
 		575581DA2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxFestivalIntent.swift; sourceTree = "<group>"; };
-		575581E32616254400A2EC47 /* FestivalIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestivalIntent.swift; sourceTree = "<group>"; };
 		575581E72616497100A2EC47 /* ListeJeuxEditeurIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeJeuxEditeurIntent.swift; sourceTree = "<group>"; };
 		575581EF261654CB00A2EC47 /* ListeEditeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeEditeurView.swift; sourceTree = "<group>"; };
 		575581F226165C0200A2EC47 /* TypeJeu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeJeu.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		57B2F55D26076FDF00CA9233 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		57B2F5632607746200CA9233 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		57D865EE260B7CA9002C422C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		7C2AFC232616AE6C008D93A4 /* EditeurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditeurView.swift; sourceTree = "<group>"; };
 		7C2EAA9B261466B6007B7D5C /* SearchJeuxViewIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchJeuxViewIntent.swift; path = Festival_des_jeux/SearchJeuxViewIntent.swift; sourceTree = SOURCE_ROOT; };
 		7C2EAAA026147067007B7D5C /* InOutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InOutHelper.swift; sourceTree = "<group>"; };
 		7C8E21CC260C91C8004DCDE6 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
@@ -184,6 +184,7 @@
 			children = (
 				5774D8CE2607DA6100954FE2 /* ListeJeuxEditeurView.swift */,
 				575581EF261654CB00A2EC47 /* ListeEditeurView.swift */,
+				7C2AFC232616AE6C008D93A4 /* EditeurView.swift */,
 			);
 			path = Editeur;
 			sourceTree = "<group>";
@@ -210,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				575581DA2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift */,
-				575581E32616254400A2EC47 /* FestivalIntent.swift */,
 			);
 			path = festival;
 			sourceTree = "<group>";
@@ -434,6 +434,7 @@
 				571D84452609EC0500EBA2A1 /* ListeJeuxEditeurVM.swift in Sources */,
 				57B2F545260764F400CA9233 /* Festival_des_jeuxApp.swift in Sources */,
 				5774D8CF2607DA6100954FE2 /* ListeJeuxEditeurView.swift in Sources */,
+				7C2AFC242616AE6C008D93A4 /* EditeurView.swift in Sources */,
 				575581DB2615E08600A2EC47 /* ListeJeuxFestivalIntent.swift in Sources */,
 				57B2F5642607746200CA9233 /* SearchBar.swift in Sources */,
 				5755820E2616947F00A2EC47 /* ListeZoneView.swift in Sources */,
@@ -460,7 +461,6 @@
 				7CE7D8EF2616828A007528FA /* JeuView.swift in Sources */,
 				577500C9261518C800D94344 /* JeuVM.swift in Sources */,
 				7C2EAAA126147067007B7D5C /* InOutHelper.swift in Sources */,
-				575581E42616254400A2EC47 /* FestivalIntent.swift in Sources */,
 				571D843F2609EBE100EBA2A1 /* ListeJeuxZoneVM.swift in Sources */,
 				571D84482609EC1600EBA2A1 /* DetailsJeuEditeurVM.swift in Sources */,
 				575581F926165CFA00A2EC47 /* ListeJeuxEditeur.swift in Sources */,

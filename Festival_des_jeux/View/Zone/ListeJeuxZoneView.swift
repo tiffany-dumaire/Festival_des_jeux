@@ -83,11 +83,11 @@ struct ListeJeuxZoneView: View {
                ZStack{
                    List{
                        ForEach(self.listeZoneVM.zones.filter(filterSearch)){ zone in
-                        NavigationLink(destination: ListeJeuxView(jeux: zone.jeuxReserve)
-                           )
-                           {
-                               ZoneRow(zone: zone)
-                           }
+                        //NavigationLink(destination: ListeZoneView()
+                          // )
+                          // {
+                           //    ZoneRow(zone: zone)
+                          // }
                            
                        }
                    }

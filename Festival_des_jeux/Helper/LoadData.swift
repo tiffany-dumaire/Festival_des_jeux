@@ -200,10 +200,10 @@ class LoadData {
             return jeux
         }
     
-    static func zonesDataOfZones(data: [ZonesData]) -> [Zone]?{
+    static func zonesDataOfZones(data: [ZoneData]) -> [Zone]?{
             var zones = [Zone]()
             for d in data{
-                let zone = Zone(idZone: d.zone.idZone, nomZone: d.zone.nomZone, jeuxReserve: jeuDataOfJeu(data: d.jeux) ?? [Jeu(id: 0, nomJeu: "", nbJoueurMin: 0, nbJoueurMax: 0, ageMin: 0, duree: 0, lienNotice: "", typeJeu: "", editeur: "")])
+                let zone = Zone(idZone: d.idZone, nomZone: d.nomZone)
                 zones.append(zone)
             }
             return zones
@@ -271,16 +271,16 @@ class LoadData {
                     let decodedData : Decodable?
                     
                     
-                        decodedData = try? JSONDecoder().decode([ZonesData].self, from: data)
+                        decodedData = try? JSONDecoder().decode([ZoneData].self, from: data)
                     
                     guard let decodedResponse = decodedData else {
                         DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
                         return
                     }
                     
-                    var zonesData : [ZonesData]
+                    var zonesData : [ZoneData]
                     
-                    zonesData = (decodedResponse as! [ZonesData])
+                    zonesData = (decodedResponse as! [ZoneData])
                     
                     
                     

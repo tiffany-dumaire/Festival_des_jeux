@@ -7,11 +7,10 @@
 
 import Foundation
 
-class Zone: ObservableObject, Decodable {
+class Zone: Identifiable, ObservableObject, Decodable {
     
     private(set) var idZone:Int
     private(set) var nomZone:String
-    private(set) var jeuxReserve:[Jeu]
     
     /**
         Constructeur de la class Zone
@@ -19,9 +18,8 @@ class Zone: ObservableObject, Decodable {
             - idZone : identifiant de la zone
             - nomZone : nom de la zone
      */
-    init(idZone:Int,nomZone:String,jeuxReserve:[Jeu]){
+    init(idZone:Int,nomZone:String){
         self.idZone = idZone
         self.nomZone = nomZone
-        self.jeuxReserve = jeuxReserve
     }
 }

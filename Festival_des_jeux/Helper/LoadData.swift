@@ -269,8 +269,6 @@ class LoadData {
             URLSession.shared.dataTask(with: request) { data, response, error in
                 if let data = data {
                     let decodedData : Decodable?
-                    
-                    
                         decodedData = try? JSONDecoder().decode([ZoneData].self, from: data)
                     
                     guard let decodedResponse = decodedData else {
@@ -281,9 +279,7 @@ class LoadData {
                     var zonesData : [ZoneData]
                     
                     zonesData = (decodedResponse as! [ZoneData])
-                    
-                    
-                    
+
                     guard let zones = self.zonesDataOfZones(data: zonesData) else{
                         DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
                         return

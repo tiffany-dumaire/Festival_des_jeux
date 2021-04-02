@@ -59,7 +59,8 @@ class ListeJeuxZoneVM : ObservableObject, ListeJeuxZoneDelegate {
     @Published var state : ListeJeuxZoneState = .ready {
         didSet{
             #if DEBUG
-            debugPrint("Problème ListeJeuxZoneVM : state.didSet = \(state)")
+            debugPrint(zones)
+            debugPrint("ListeJeuxZoneVM : state.didSet = \(state)")
             #endif
             switch self.state {
                 case let .loaded(data): self.model.new(zones:data)

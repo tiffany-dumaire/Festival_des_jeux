@@ -15,19 +15,60 @@ struct JeuView: View {
     }
     
     var body: some View {
-        HStack{
-            Spacer()
-            Image("logo")
-            .resizable()
-            .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
+        ZStack{
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                    Image("logo")
+                    .resizable()
+                    .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
+                }
+                Spacer()
+                HStack{
+                    VStack{
+                        HStack{
+                            Text(jeu.nomJeu)
+                                .font(.title)
+                                .bold()
+                            Spacer()
+                        }
+                        Spacer()
+                        HStack{
+                            Text("Age minimum: " + String(jeu.ageMin))
+                            Spacer()
+                        }
+                        Spacer()
+                        HStack{
+                            Text("Nombre de joueurs minimum: " + String(jeu.nbJoueurMin))
+                            Spacer()
+                        }
+                        Spacer()
+                        HStack{
+                            Text("Durée: " + String(jeu.duree ) + " minutes")
+                            Spacer()
+                        }
+                        Spacer()
+                        HStack{
+                            Text("Societe: " + String(jeu.editeur))
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                    .padding(30)
+                    .background(Color.white)
+                    .cornerRadius(30)
+                }
+                Spacer()
+                
+            }.background(
+                Image("backgroundDetails")
+                    .resizable()
+                    .scaledToFill()
+                    .clipped()
+                )
+            .edgesIgnoringSafeArea(.all)
         }
-        Text(jeu.nomJeu).font(.title)
-            .padding(.horizontal,25)
-        Text("Age minimum: " + String(jeu.ageMin))
-        Text("Nombre de joueurs minimum: " + String(jeu.nbJoueurMin))
-        Text("Durée: " + String(jeu.duree ) + " minutes")
-        Text("Societe: " + String(jeu.editeur))
-        Spacer()
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var listeZones : [Zone]   = [Zone(idZone: 1, nomZone: "Z1"),Zone(idZone: 2, nomZone: "Z2")]
-     var editeurs = [Editeur(idEditeur: 1, nomEditeur: "Editeur 1"),Editeur(idEditeur: 2, nomEditeur: "Editeur 2")]
+    var editeurs = [Editeur(idEditeur: 1, nomEditeur: "Editeur 1"),Editeur(idEditeur: 2, nomEditeur: "Editeur 2")]
     var jeux = [Jeu(id: 1, nomJeu: "Jeu 1", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 5, duree: 20, lienNotice: "", typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 2, nomJeu: "Jeu 2", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 5, duree: 20, lienNotice: "", typeJeu: "Famille", editeur: "Editeur")]
     
     var body: some View {

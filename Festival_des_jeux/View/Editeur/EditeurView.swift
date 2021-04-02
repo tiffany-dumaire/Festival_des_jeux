@@ -16,23 +16,98 @@ struct EditeurView: View {
         self.jeux = jeux
     }
     
-    var body: some View {
-        HStack{
-            Spacer()
-            Image("logo")
-            .resizable()
-            .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
+    func listeJeux() -> [AnyView]{
+        var res:[AnyView] = []
+        if self.jeux.count>0{
+            for j in self.jeux{
+                let cur = AnyView(
+                NavigationView{
+                    VStack{
+                        HStack{
+                            Text("Nom du jeu : \(j.nomJeu)")
+                            .foregroundColor(.green)
+                                .bold()
+                            .font(.title)
+                            Spacer()
+                        }
+                        Spacer()
+                        HStack{
+                            Text("Nombre de joueurs:")
+                                .bold()
+                            Text("\(j.nbJoueurMin) à \(j.nbJoueurMax)")
+                            Spacer()
+                        }
+                        HStack{
+                            Text("Age minimum requis :")
+                                .bold()
+                            Text("\(j.ageMin)")
+                            Spacer()
+                        }
+                        HStack{
+                            Text("Durée du jeu :")
+                                .bold()
+                            Text("\(j.duree) minutes")
+                            Spacer()
+                        }
+                        HStack{
+                            Text("Nom Editeur: ")
+                                .bold()
+                            Text("\(j.editeur)")
+                            Spacer()
+                        }
+                        HStack{
+                            Text("Type du Jeux : ")
+                                .bold()
+                            Text("\(j.typeJeu)")
+                            Spacer()
+                        }
+                        Spacer()
+                        VStack{
+                            HStack{
+                                Text("Lien vers la notive :")
+                                    .bold()
+                                Spacer()
+                            }
+                            HStack{
+                                if(j.lienNotice == ""){
+                                    Text("Aucune notice renséignée")
+                                }else{
+                                    Text("\(j.lienNotice)")
+                                }
+                                Spacer()
+                            }
+                        }
+                        Spacer()
+                    }
+                })
+                res.append(cur)
+            }
+        }else{
+            res.append(AnyView(Text("Pas de jeux trouvés")))
         }
-        Text(editeur.nomEditeur).font(.title)
-            .padding(.horizontal,25)
-        ForEach(jeux){j in
-        Text(j.nomJeu).font(.title)
-            .padding(.horizontal,25)
-        Text("Age minimum: " + String(j.ageMin))
-        Text("Nombre de joueurs minimum: " + String(j.nbJoueurMin))
-        Text("Durée: " + String(j.duree ) + " minutes")
-        Text("Societe: " + String(j.editeur))
-        Spacer()
+        return res
+    }
+    var body: some View {
+        ZStack{
+            VStack{
+                HStack{
+                    Spacer()
+                    Image("logo")
+                    .resizable()
+                    .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
+                }
+                HStack{
+                    var listeJeu = listeJeux()
+                    CarouselView(carouselLocation: 0, itemHeight: 350, views: listeJeu)
+                }
+                Spacer()
+            }.background(
+                Image("new")
+                    .resizable()
+                    .scaledToFill()
+                    .clipped()
+                )
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

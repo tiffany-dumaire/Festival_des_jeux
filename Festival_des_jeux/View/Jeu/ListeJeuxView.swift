@@ -2,7 +2,7 @@
 //  ListeJeuxView.swift
 //  Festival_des_jeux
 //
-//  Created by user184780 on 4/2/21.
+//  Created by Aaron L on 4/2/21.
 //
 
 import Foundation
@@ -26,13 +26,7 @@ struct ListeJeuxView: View {
     var body: some View {
 
         ZStack{
-            List{
-                ForEach(self.jeux){ jeu in
-                    NavigationLink(destination: JeuView(jeu: jeu)){
-                        Text(jeu.nomJeu)
-                    }
-                }
-            }
+            
             if jeux.count == 0{
                 VStack{
                     Spacer()

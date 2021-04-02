@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var listeZones : [ZoneVM]   = []
+    var listeZones : [Zone]   = [Zone(idZone: 1, nomZone: "Z1"),Zone(idZone: 2, nomZone: "Z2")]
+     var editeurs = [Editeur(idEditeur: 1, nomEditeur: "Editeur 1"),Editeur(idEditeur: 2, nomEditeur: "Editeur 2")]
+    var jeux = [Jeu(id: 1, nomJeu: "Jeu 1", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 5, duree: 20, lienNotice: "", typeJeu: "Famille", editeur: "Editeur"),Jeu(id: 2, nomJeu: "Jeu 2", nbJoueurMin: 1, nbJoueurMax: 2, ageMin: 5, duree: 20, lienNotice: "", typeJeu: "Famille", editeur: "Editeur")]
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -20,14 +23,14 @@ struct ContentView: View {
                         .frame(minWidth: 120, idealWidth: 120, maxWidth: 120, minHeight: 90, idealHeight: 90, maxHeight: 90, alignment: .top)
                     }
                     HStack{
-                        Text("Festival : \n").bold()
+                        Text("Festival : \nFoire Expo 2021").bold()
                             .font(.largeTitle)
                             .foregroundColor(Color.black)
                         Spacer()
                     }
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxFestivalView(),
+                            destination: ListeJeuxView(jeux:jeux),
                             label: {
                                 Text("Liste des jeux du Festival")
                                     .bold()
@@ -52,7 +55,7 @@ struct ContentView: View {
                     Spacer()
                     HStack{
                         NavigationLink(
-                            destination: ListeJeuxEditeurView(),
+                            destination: ListeEditeurView(editeurs:editeurs),
                             label: {
                                 Text("Liste des jeux par Editeur")
                                     .bold()

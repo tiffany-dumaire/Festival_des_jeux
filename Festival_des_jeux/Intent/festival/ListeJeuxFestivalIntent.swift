@@ -36,16 +36,21 @@ class ListeJeuxFestivalIntent {
         
     }
     
-    func httpsJsonLoaded(result:Result<[Jeu],HttpRequestError>){
-        switch result {
-        case let .success(data):
-            #if DEBUG
-            debugPrint("Problème liste jeux intent : httpJsonLoaded -> success -> .loaded(jeuxFestival)")
-            #endif
-            listeJeuxFestival.state = .loaded(data)
-        case let .failure(error):
-            listeJeuxFestival.state = .loadingError(error)
+    func httpJsonLoaded(result: Result<[Jeu], HttpRequestError>){
+        switch result{
+            case let .success(data):
+                self.listeJeuxFestival.state = .loaded(data)
+            case let .failure(error):
+                self.listeJeuxFestival.state = .loadingError(error)
         }
+        
     }
+    
+    func listeJeuxBack() {
+            let url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyfestival"
+            self.listeJeuxFestival.state = .loading(url)
+            //call API with httJson Loaded
+            LoadData.loadJeuxFestival(url: url,endofrequest: httpJsonLoaded)
+        }
     
 }

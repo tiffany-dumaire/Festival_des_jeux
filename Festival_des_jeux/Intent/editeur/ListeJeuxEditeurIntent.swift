@@ -29,4 +29,11 @@ class ListeJeuxEditeurIntent {
         }
         
     }
+    
+    func listeJeuxBack() {
+            let url = "https://backend-festival-app.herokuapp.com/jeu/last/allbyeditor"
+            self.editeurs.state = .loading(url)
+            //call API with httJson Loaded
+            LoadData.loadEditeurs(url: url,endofrequest: httpJsonLoaded)
+        }
 }

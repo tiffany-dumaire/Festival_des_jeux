@@ -7,7 +7,17 @@
 
 import Foundation
 
-class Editeur: ObservableObject, Decodable{
+/**
+    Structure de données EditeurData qui permettra de récupérer les éditeurs et la liste des jeux associés
+ */
+struct EditeurData: Codable{
+    public var idSociete:Int
+    public var nomSociete:String
+    public var jeuxReserves:[JeuData]
+    
+}
+
+class Editeur: Identifiable,ObservableObject, Decodable{
     
     private(set) var idEditeur:Int
     private(set) var nomEditeur:String

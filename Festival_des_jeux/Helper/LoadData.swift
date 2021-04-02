@@ -43,14 +43,9 @@ struct FestivalData: Codable{
     public var annee:Int
 }
 
-/**
-    Structure de données EditeurData qui permettra de récupérer les éditeurs et la liste des jeux associés
- */
-struct EditeurData: Codable{
-    public var idSociete:Int
-    public var nomSociete:String
-    public var jeuxReserves:[JeuData]
-    
+struct EditeursData: Codable {
+    public var societe: EditeurData
+    public var jeuxReserves: [JeuData]
 }
 
 struct JeuxData : Codable {
@@ -166,6 +161,14 @@ class LoadData {
         return jeuxFestival
     }
     
+    static func loadJeuxFestival(url surl: String, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
+            guard let url = URL(string: surl) else {
+                endofrequest(.failure(.badURL(surl)))
+                return
+            }
+            self.loadJeuxFestival(url: url, endofrequest: endofrequest)
+        }
+    
     static func loadJeuxFestival(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){
         self.searchJeuxFestival(url:url, endofrequest:endofrequest)
     }
@@ -218,6 +221,80 @@ class LoadData {
         }
     static func loadZones(url: URL, endofrequest: @escaping (Result<[Zone],HttpRequestError>) -> Void){
             self.searchZonesFestival(url: url, endofrequest: endofrequest)
+        }
+    
+    static func loadEditeurs(url surl: String, endofrequest: @escaping (Result<[Editeur],HttpRequestError>) -> Void){
+            guard let url = URL(string: surl) else {
+                endofrequest(.failure(.badURL(surl)))
+                return
+            }
+            self.loadEditeurs(url: url, endofrequest: endofrequest)
+        }
+    
+    static func loadEditeurs(url: URL, endofrequest: @escaping (Result<[Editeur],HttpRequestError>) -> Void){
+            self.searchEditeurs(url: url, endofrequest: endofrequest)
+        }
+    
+    static func editeursDataOfEditeurs(data: [EditeursData]) -> [Editeur]?{
+            var editeurs = [Editeur]()
+            for d in data{
+                let editeur = Editeur(idEditeur: d.societe.idSociete, nomEditeur: d.societe.nomSociete)
+                editeurs.append(editeur)
+            }
+            return editeurs
+        }
+    
+    static func searchEditeurs(url: URL, endofrequest: @escaping (Result<[Editeur],HttpRequestError>) -> Void){
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let data = data {
+                    let decodedData : Decodable?
+                    
+                    
+                        decodedData = try? JSONDecoder().decode([EditeursData].self, from: data)
+                    
+                    guard let decodedResponse = decodedData else {
+                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                        return
+                    }
+                    
+                    var editeursData : [EditeursData]
+                    
+                    editeursData = (decodedResponse as! [EditeursData])
+                    
+                    
+                    
+                    guard let editeurs = self.editeursDataOfEditeurs(data: editeursData) else{
+                        DispatchQueue.main.async { endofrequest(.failure(.JsonDecodingFailed)) }
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        endofrequest(.success(editeurs))
+                    }
+                }
+                else{
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            guard let error = error as? URLError else {
+                                endofrequest(.failure(.unknown))
+                                return
+                            }
+                            endofrequest(.failure(.failingURL(error)))
+                        }
+                        else{
+                            guard let response = response as? HTTPURLResponse else{
+                                endofrequest(.failure(.unknown))
+                                return
+                            }
+                            guard response.statusCode == 200 else {
+                                endofrequest(.failure(.requestFailed))
+                                return
+                            }
+                            endofrequest(.failure(.unknown))
+                        }
+                    }
+                }
+            }.resume()
         }
     
     static func searchJeuxFestival(url: URL, endofrequest: @escaping (Result<[Jeu],HttpRequestError>) -> Void){

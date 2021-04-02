@@ -1,5 +1,5 @@
 //
-//  ListeJeuxEditeur.swift
+//  ListeJeuxEditeurView.swift
 //  Festival_des_jeux
 //
 //  Created by Tiffany D on 3/21/21.
@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListeJeuxEditeurView: View {
+    
     var body: some View {
         NavigationView{
             ZStack{
